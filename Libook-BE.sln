@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libook_API", "Libook_API\Libook_API.csproj", "{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F7459B4-F8E9-4236-B4ED-DC77040CC259}
+	EndGlobalSection
+EndGlobal
