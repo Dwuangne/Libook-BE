@@ -4620,11 +4620,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Libook\\Libook-be\\Libook_API\\Libook_API.csproj",
+      "projectUniqueName": "D:\\Libook\\Libook-BE\\Libook_API\\Libook_API.csproj",
       "projectName": "Libook_API",
-      "projectPath": "D:\\Libook\\Libook-be\\Libook_API\\Libook_API.csproj",
+      "projectPath": "D:\\Libook\\Libook-BE\\Libook_API\\Libook_API.csproj",
       "packagesPath": "C:\\Users\\tquan\\.nuget\\packages\\",
-      "outputPath": "D:\\Libook\\Libook-be\\Libook_API\\obj\\",
+      "outputPath": "D:\\Libook\\Libook-BE\\Libook_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tquan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4728,13 +4728,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\Libook\\Libook-be\\Libook_API\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
