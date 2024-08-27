@@ -11,7 +11,7 @@
         "projectName": "Libook_API",
         "projectPath": "D:\\Libook\\Libook-be\\Libook_API\\Libook_API.csproj",
         "packagesPath": "C:\\Users\\tquan\\.nuget\\packages\\",
-        "outputPath": "D:\\Libook\\Libook-BE\\Libook_API\\obj\\",
+        "outputPath": "D:\\Libook\\Libook-be\\Libook_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tquan\\AppData\\Roaming\\NuGet\\NuGet.Config",
