@@ -1,0 +1,35 @@
+﻿<!-- ConfirmEmailSuccessTemplate.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation Success</title>
+    <style>
+        .button {
+            background-color: #1a82e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Email Confirmation Successful</h2>
+        <p>Your email has been successfully confirmed. Thank you for verifying your account.</p>
+        <a href="@Model.HomePageLink" class="button">Return to Home</a>
+    </div>
+</body>
+</html>
+

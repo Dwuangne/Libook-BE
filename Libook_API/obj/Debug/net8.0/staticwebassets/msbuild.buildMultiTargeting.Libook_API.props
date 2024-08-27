@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Libook_API.props" />
+</Project>
