@@ -5,6 +5,12 @@ namespace Libook_API.Models.Domain;
 
 public partial class Book
 {
+
+    public Book()
+    {
+        Id = Guid.NewGuid();
+    }
+
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;

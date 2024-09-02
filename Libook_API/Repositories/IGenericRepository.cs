@@ -6,10 +6,10 @@ namespace Libook_API.Repositories
     {
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<TEntity> GetByIdAsync(object id);
-        Task InsertAsync(TEntity entity);
-        void Update(TEntity entity);
-        Task DeleteAsync(object id);
-        void Delete(TEntity entity);
+        Task<TEntity> InsertAsync(TEntity entity);
+        Task<TEntity> UpdateAsync(TEntity entity);
+        Task<TEntity> DeleteAsync(object id);
+        Task<TEntity> Delete(TEntity entity);
         Task<IEnumerable<TEntity>> GetAsync(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,

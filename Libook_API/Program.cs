@@ -47,6 +47,7 @@ using Libook_API.Repositories.SupplierRepo;
 using Libook_API.Repositories.VoucherRepo;
 using Libook_API.Repositories.VoucherActivedRepo;
 using Libook_API.Repositories.WardRepo;
+using Libook_API.Mapping;
 
 namespace Libook_API
 {
@@ -149,6 +150,8 @@ namespace Libook_API
             builder.Services.AddScoped<IVoucherRepository, VoucherRepository>();
             builder.Services.AddScoped<IVoucherActivedRepository, VoucherActivedRepository>();
             builder.Services.AddScoped<IWardRepository, WardRepository>();
+
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
             builder.Services.AddIdentityCore<IdentityUser>()
                 .AddRoles<IdentityRole>()

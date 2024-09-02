@@ -1,6 +1,81 @@
-﻿namespace Libook_API.Service.BookService
+﻿using AutoMapper;
+using Libook_API.Models.Domain;
+using Libook_API.Models.DTO;
+using Libook_API.Repositories.AuthorRepo;
+using Libook_API.Repositories.BookRepo;
+using System.Linq.Expressions;
+
+namespace Libook_API.Service.BookService
 {
     public class BookService : IBookService
     {
+        private readonly IBookRepository bookRepository;
+        private readonly IMapper mapper;
+
+        public BookService(IBookRepository bookRepository, IMapper mapper)
+        {
+            this.bookRepository = bookRepository;
+            this.mapper = mapper;
+        }
+        public async Task<BookResponseDTO> AddBookAsync(BookDTO bookDTO)
+        {
+            // Map or Convert DTO to Domain Model
+            var bookDomain = mapper.Map<Book>(bookDTO);
+
+            // Use Domain Model to create Author
+            bookDomain = await bookRepository.InsertAsync(bookDomain);
+
+            return mapper.Map<BookResponseDTO>(bookDomain);
+        }
+
+        public async Task<IEnumerable<BookResponseDTO?>> GetBookAsync(
+            Expression<Func<Book, bool>>? filter, 
+            Func<IQueryable<Book>, IOrderedQueryable<Book>> orderBy, 
+            string includeProperties, 
+            int pageIndex, 
+            int pageSize
+            )
+        {
+            var bookDomains = await bookRepository.GetAsync(
+                        filter: filter,
+                        orderBy: orderBy,
+                        includeProperties: includeProperties,
+                        pageIndex: pageIndex,
+                        pageSize: pageSize
+                        );
+
+            // Giả sử authorDomains là danh sách các đối tượng AuthorDomain
+            var bookResponse = mapper.Map<List<BookResponseDTO>>(bookDomains);
+
+            return bookResponse;
+        }
+
+        public async Task<BookResponseDTO?> GetBookByIdAsync(Guid bookId)
+        {
+            var bookDomain = await bookRepository.GetByIdAsync(bookId);
+            return mapper.Map<BookResponseDTO>(bookDomain);
+        }
+
+        public async Task<BookResponseDTO?> UpdateBookAsync(Guid bookId, BookDTO bookDTO)
+        {
+            var existingBook = await bookRepository.GetByIdAsync(bookId);
+            if (existingBook == null)
+            {
+                return null;
+            }
+
+            existingBook.Name = bookDTO.Name;
+            existingBook.Description = bookDTO.Description;
+            existingBook.Price = bookDTO.Price;
+            existingBook.PrecentDiscount = bookDTO.PrecentDiscount;
+            existingBook.Remain = bookDTO.Remain;
+            existingBook.AuthorId = bookDTO.AuthorId;
+            existingBook.CategoryId = bookDTO.CategoryId;
+            existingBook.SupplierId = bookDTO.SupplierId;
+
+            existingBook = await bookRepository.UpdateAsync(existingBook);
+
+            return mapper.Map<BookResponseDTO>(existingBook);
+        }
     }
 }
