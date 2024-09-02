@@ -5,6 +5,10 @@ namespace Libook_API.Models.Domain;
 
 public partial class Supplier
 {
+    public Supplier()
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;

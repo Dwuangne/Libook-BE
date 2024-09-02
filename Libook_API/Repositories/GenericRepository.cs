@@ -29,30 +29,36 @@ namespace Libook_API.Repositories
             return await _dbSet.FindAsync(id);
         }
 
-        public virtual async Task InsertAsync(TEntity entity)
+        public virtual async Task<TEntity> InsertAsync(TEntity entity)
         {
             await _dbSet.AddAsync(entity);
+            await _context.SaveChangesAsync(); // Save changes to database
+            return entity;
         }
 
-        public virtual void Update(TEntity entity)
+        public virtual async Task<TEntity> UpdateAsync(TEntity entity)
         {
             _dbSet.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync(); // Save changes to database
+            return entity;
         }
 
-        public virtual async Task DeleteAsync(object id)
+        public virtual async Task<TEntity> DeleteAsync(object id)
         {
             TEntity entity = await GetByIdAsync(id);
-            Delete(entity);
+            return await Delete(entity);
         }
 
-        public virtual void Delete(TEntity entity)
+        public virtual async Task<TEntity> Delete(TEntity entity)
         {
             if (_context.Entry(entity).State == EntityState.Detached)
             {
                 _dbSet.Attach(entity);
             }
             _dbSet.Remove(entity);
+            await _context.SaveChangesAsync(); // Save changes to database
+            return entity;
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAsync(
@@ -69,8 +75,7 @@ namespace Libook_API.Repositories
                 query = query.Where(filter);
             }
 
-            foreach (var includeProperty in includeProperties.Split
-                (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            foreach (var includeProperty in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
                 query = query.Include(includeProperty);
             }
