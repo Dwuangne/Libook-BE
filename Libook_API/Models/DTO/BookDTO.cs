@@ -14,6 +14,8 @@ namespace Libook_API.Models.DTO
 
         public int Remain { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public bool IsActive { get; set; }
 
         public Guid AuthorId { get; set; }
@@ -37,12 +39,14 @@ namespace Libook_API.Models.DTO
 
         public int Remain { get; set; }
 
+        public string ImageUrl { get; set; }
+
         public Guid AuthorId { get; set; }
 
         public Guid CategoryId { get; set; }
 
         public Guid SupplierId { get; set; }
 
-        //public virtual ICollection<BookImage> BookImages { get; set; } = new List<BookImage>();
+        public virtual ICollection<BookImageResponseWithDTO> BookImages { get; set; }
     }
 }

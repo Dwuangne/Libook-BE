@@ -19,6 +19,19 @@ namespace Libook_API.Mapping
 
             CreateMap<BookDTO, Book>().ReverseMap();
             CreateMap<Book, BookResponseDTO>().ReverseMap();
+
+            CreateMap<BookImageDTO, BookImage>().ReverseMap();
+            CreateMap<BookImageUpdateDTO, BookImage>().ReverseMap();
+            CreateMap<BookImage, BookImageResponseDTO>().ReverseMap();
+            CreateMap<BookImage, BookImageResponseWithDTO>().ReverseMap();
+
+            CreateMap<CommentDTO, Comment>().ReverseMap();
+            CreateMap<Comment, CommentResponsesDTO>().ReverseMap();
+
+            CreateMap<CommentImageDTO, CommentImage>().ReverseMap();
+            CreateMap<CommentImageUpdateDTO, CommentImage>().ReverseMap();
+            CreateMap<CommentImage, CommentImageResponseDTO>().ReverseMap();
+            CreateMap<CommentImage, CommentImageResponseWithDTO>().ReverseMap();
         }
     }
 }

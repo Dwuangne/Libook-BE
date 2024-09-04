@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Libook_API.Configure;
 using Libook_API.Models.Domain;
 using Libook_API.Models.DTO;
 using Libook_API.Models.Response;
@@ -22,49 +23,47 @@ namespace Libook_API.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll(
-            string? filter = null,
-            string? authorId = null,
-            string? categoryId = null,
-            string? supplierId = null,
-            string? orderBy = "Name",
-            bool IsDescending = false,
-            int pageIndex = 1,
-            int pageSize = 12)
+             string? filter = null,
+             string? authorId = null,
+             string? categoryId = null,
+             string? supplierId = null,
+             string? orderBy = "Name",
+             bool IsDescending = false,
+             int pageIndex = 1,
+             int pageSize = 12)
         {
+            // Start with a base filter
             Expression<Func<Book, bool>> filterExpression = b => b.IsActive;
 
-            // Example filter logic (customize as needed)
+            // Combine filters using AndAlso method
             if (!string.IsNullOrEmpty(filter))
             {
-                filterExpression = b => b.Name.Contains(filter);
+                filterExpression = filterExpression.AndAlso(b => b.Name.Contains(filter));
             }
 
             if (!string.IsNullOrEmpty(authorId))
             {
-                filterExpression = b => b.AuthorId.Equals(authorId);
+                var authorGuid = Guid.Parse(authorId);
+                filterExpression = filterExpression.AndAlso(b => b.AuthorId == authorGuid);
             }
 
             if (!string.IsNullOrEmpty(categoryId))
             {
-                filterExpression = b => b.CategoryId.Equals(categoryId);
+                var categoryGuid = Guid.Parse(categoryId);
+                filterExpression = filterExpression.AndAlso(b => b.CategoryId == categoryGuid);
             }
 
             if (!string.IsNullOrEmpty(supplierId))
             {
-                filterExpression = b => b.SupplierId.Equals(supplierId);
+                var supplierGuid = Guid.Parse(supplierId);
+                filterExpression = filterExpression.AndAlso(b => b.SupplierId == supplierGuid);
             }
 
             // Map string orderBy to the appropriate property (use switch or reflection if necessary)
             Func<IQueryable<Book>, IOrderedQueryable<Book>> orderByFunc = q => q.OrderBy(b => b.Name); // Default ordering by Name
             if (orderBy?.ToLower() == "price")
             {
-                if (IsDescending) {
-                    orderByFunc = q => q.OrderByDescending(b => b.Price);
-                }
-                else
-                {
-                    orderByFunc = q => q.OrderBy(b => b.Price);
-                }
+                orderByFunc = IsDescending ? q => q.OrderByDescending(b => b.Price) : q => q.OrderBy(b => b.Price);
             }
 
             var bookResponses = await bookService.GetBookAsync(
@@ -84,6 +83,7 @@ namespace Libook_API.Controllers
 
             return Ok(response);
         }
+
 
 
         [HttpGet]

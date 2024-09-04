@@ -24,7 +24,7 @@ namespace Libook_API.Repositories
             return await _dbSet.ToListAsync();
         }
 
-        public virtual async Task<TEntity> GetByIdAsync(object id)
+        public virtual async Task<TEntity?> GetByIdAsync(object id)
         {
             return await _dbSet.FindAsync(id);
         }

@@ -5,6 +5,10 @@ namespace Libook_API.Models.Domain;
 
 public partial class CommentImage
 {
+    public CommentImage()
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
 
     public string? CommentImageUrl { get; set; }
