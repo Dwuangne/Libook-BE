@@ -23,6 +23,8 @@ public partial class Book
 
     public int Remain { get; set; }
 
+    public string ImageUrl { get; set; } = null!;
+
     public bool IsActive { get; set; }
 
     public Guid AuthorId { get; set; }

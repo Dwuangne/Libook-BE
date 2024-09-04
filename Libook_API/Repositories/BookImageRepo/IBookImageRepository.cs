@@ -4,5 +4,6 @@ namespace Libook_API.Repositories.BookImageRepo
 {
     public interface IBookImageRepository : IGenericRepository<BookImage>
     {
+        Task<IEnumerable<BookImage>> GetByBookId(Guid bookId);
     }
 }

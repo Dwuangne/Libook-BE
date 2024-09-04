@@ -5,6 +5,11 @@ namespace Libook_API.Models.Domain;
 
 public partial class Comment
 {
+
+    public Comment()
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
 
     public DateTime DateCreate { get; set; }

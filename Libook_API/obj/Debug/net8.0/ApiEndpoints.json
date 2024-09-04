@@ -230,6 +230,101 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Libook_API.Controllers.BookImageController",
+    "Method": "GetAll",
+    "RelativePath": "api/BookImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.BookImageController",
+    "Method": "Create",
+    "RelativePath": "api/BookImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookImageDTO",
+        "Type": "Libook_API.Models.DTO.BookImageDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.BookImageController",
+    "Method": "GetById",
+    "RelativePath": "api/BookImage/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.BookImageController",
+    "Method": "Update",
+    "RelativePath": "api/BookImage/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "bookImageUpdateDTO",
+        "Type": "Libook_API.Models.DTO.BookImageUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.BookImageController",
+    "Method": "Delete",
+    "RelativePath": "api/BookImage/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.BookImageController",
+    "Method": "GetByBookId",
+    "RelativePath": "api/BookImage/book/{bookId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Libook_API.Controllers.CategoryController",
     "Method": "GetAll",
     "RelativePath": "api/Category",
@@ -287,6 +382,165 @@
       {
         "Name": "categoryDTO",
         "Type": "Libook_API.Models.DTO.CategoryDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentController",
+    "Method": "Create",
+    "RelativePath": "api/Comment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "commentDTO",
+        "Type": "Libook_API.Models.DTO.CommentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentController",
+    "Method": "GetById",
+    "RelativePath": "api/Comment/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentController",
+    "Method": "GetByBookId",
+    "RelativePath": "api/Comment/book/{bookId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentController",
+    "Method": "GetByUserId",
+    "RelativePath": "api/Comment/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "Method": "GetAll",
+    "RelativePath": "api/CommentImage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "Method": "Create",
+    "RelativePath": "api/CommentImage",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "commentImageDTO",
+        "Type": "Libook_API.Models.DTO.CommentImageDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "Method": "GetById",
+    "RelativePath": "api/CommentImage/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "Method": "Update",
+    "RelativePath": "api/CommentImage/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentImageUpdateDTO",
+        "Type": "Libook_API.Models.DTO.CommentImageUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "Method": "Delete",
+    "RelativePath": "api/CommentImage/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "Method": "GetByBookId",
+    "RelativePath": "api/CommentImage/comment/{commentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "commentId",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

@@ -27,7 +27,7 @@ namespace Libook_API.Controllers
             var response = new ResponseObject
             {
                 status = System.Net.HttpStatusCode.OK,
-                message = "Get all author successfully !",
+                message = "Get all author successfully!",
                 data = authorResponses
             };
             return Ok(response);
@@ -47,7 +47,7 @@ namespace Libook_API.Controllers
             var response = new ResponseObject
             {
                 status = System.Net.HttpStatusCode.OK,
-                message = "Get author by id successfully !",
+                message = "Get author by id successfully!",
                 data = authorResponse
             };
             return Ok(response);
@@ -61,7 +61,7 @@ namespace Libook_API.Controllers
             var response = new ResponseObject
             {
                 status = System.Net.HttpStatusCode.OK,
-                message = "Create author successfully !",
+                message = "Create author successfully!",
                 data = authorResponse
             };
             return Ok(response);
@@ -79,7 +79,7 @@ namespace Libook_API.Controllers
             var response = new ResponseObject
             {
                 status = System.Net.HttpStatusCode.OK,
-                message = "Update author successfully !",
+                message = "Update author successfully!",
                 data = authorResponse
             };
             return Ok(response);
