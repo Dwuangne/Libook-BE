@@ -13,6 +13,8 @@ public partial class Order
 
     public string Address {  get; set; }
 
+    public string PaymentMethod { get; set; }
+
     public Guid UserId { get; set; }
 
     public Guid? VoucherId { get; set; }

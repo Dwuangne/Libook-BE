@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Libook_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+72c17aa9fd4f83de7037619b356ed1bf54b53826")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8611cd80e1a9349e3220481990646234224739e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Libook_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Libook_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
