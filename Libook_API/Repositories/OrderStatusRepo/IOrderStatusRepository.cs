@@ -4,5 +4,6 @@ namespace Libook_API.Repositories.OrderStatusRepo
 {
     public interface IOrderStatusRepository : IGenericRepository<OrderStatus>
     {
+        Task<IEnumerable<OrderStatus>> GetByOrderId(Guid orderId);
     }
 }

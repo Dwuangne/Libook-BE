@@ -5,6 +5,10 @@ namespace Libook_API.Models.Domain;
 
 public partial class OrderDetail
 {
+    public OrderDetail()
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
 
     public double UnitPrice { get; set; }
