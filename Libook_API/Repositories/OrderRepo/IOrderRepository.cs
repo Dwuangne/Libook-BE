@@ -4,5 +4,6 @@ namespace Libook_API.Repositories.OrderRepo
 {
     public interface IOrderRepository : IGenericRepository<Order>
     {
+        Task<IEnumerable<Order>> GetByUserId(Guid userId);
     }
 }

@@ -1,12 +1,18 @@
-﻿namespace Libook_API.Models.Domain
+﻿using AutoMapper.Internal.Mappers;
+
+namespace Libook_API.Models.Domain
 {
     public class OrderInfo
     {
+        public OrderInfo()
+        {
+            Id = Guid.NewGuid();    
+        }
         public Guid Id { get; set; }
 
         public string Name { get; set; }
 
-        public int Phone {  get; set; }
+        public string Phone {  get; set; }
 
         public string ProvinceId { get; set; }
 
@@ -28,5 +34,10 @@
 
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
+
+        public override string? ToString()
+        {
+            return $"{Name}|{Phone}|{Address}|{Ward.Name}|{District.Name}|{Province.Name}|";
+        }
     }
 }

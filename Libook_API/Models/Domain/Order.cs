@@ -5,6 +5,11 @@ namespace Libook_API.Models.Domain;
 
 public partial class Order
 {
+    public Order()
+    {
+        OrderId = Guid.NewGuid();
+    }
+
     public Guid OrderId { get; set; }
 
     public DateTime DateCreate { get; set; }

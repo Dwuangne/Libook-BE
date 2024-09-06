@@ -5,6 +5,10 @@ namespace Libook_API.Models.Domain;
 
 public partial class OrderStatus
 {
+    public OrderStatus()
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
 
     public string Status { get; set; } = null!; //unpaid pending preparing delivering .....

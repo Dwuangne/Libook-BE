@@ -5,6 +5,10 @@ namespace Libook_API.Models.Domain;
 
 public partial class Voucher
 {
+    public Voucher()
+    {
+        VoucherId = Guid.NewGuid();
+    }
     public Guid VoucherId { get; set; }
 
     public string Title { get; set; } = null!;
