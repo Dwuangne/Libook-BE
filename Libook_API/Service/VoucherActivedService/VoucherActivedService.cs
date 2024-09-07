@@ -16,7 +16,7 @@ namespace Libook_API.Service.VoucherActivedService
             this.voucherActivedRepository = voucherActivedRepository;
             this.mapper = mapper;
         }
-        public async Task<VoucherActivedResponseDTO> AddVoucherAsync(VoucherActivedDTO voucherActivedDTO)
+        public async Task<VoucherActivedResponseDTO> AddVoucherActivedAsync(VoucherActivedDTO voucherActivedDTO)
         {
             // Map or Convert DTO to Domain Model
             var voucherActivedDomain = mapper.Map<VoucherActived>(voucherActivedDTO);

@@ -8,6 +8,6 @@ namespace Libook_API.Service.VoucherActivedService
         Task<IEnumerable<VoucherActivedResponseDTO?>> GetAllVoucherActivedAsync();
         Task<VoucherActivedResponseDTO?> GetVoucherActivedByIdAsync(Guid voucherActivedId);
         Task<IEnumerable<VoucherActivedResponseDTO?>> GetVoucherActivedByVoucherIdAsync(Guid voucherId);
-        Task<VoucherActivedResponseDTO> AddVoucherAsync(VoucherActivedDTO voucherActivedDTO);
+        Task<VoucherActivedResponseDTO> AddVoucherActivedAsync(VoucherActivedDTO voucherActivedDTO);
     }
 }

@@ -15,5 +15,6 @@ namespace Libook_API.Service.BookService
         Task<BookResponseDTO?> GetBookByIdAsync(Guid bookId);
         Task<BookResponseDTO> AddBookAsync(BookDTO bookDTO);
         Task<BookResponseDTO?> UpdateBookAsync(Guid bookId, BookDTO bookDTO);
+        Task<BookResponseDTO?> UpdateBookRemainAsync(Guid bookId, int bookRemain);
     }
 }

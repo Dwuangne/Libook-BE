@@ -34,10 +34,5 @@ namespace Libook_API.Models.Domain
 
         public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
-
-        public override string? ToString()
-        {
-            return $"{Name}|{Phone}|{Address}|{Ward.Name}|{District.Name}|{Province.Name}|";
-        }
     }
 }

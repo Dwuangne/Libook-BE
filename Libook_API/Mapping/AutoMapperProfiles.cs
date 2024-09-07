@@ -34,6 +34,7 @@ namespace Libook_API.Mapping
             CreateMap<CommentImage, CommentImageResponseWithDTO>().ReverseMap();
 
             CreateMap<OrderStatusDTO, OrderStatus>().ReverseMap();
+            CreateMap<OrderStatusWithDTO, OrderStatus>().ReverseMap();
             CreateMap<OrderStatus, OrderStatusResponseDTO>().ReverseMap();
             CreateMap<OrderStatus, OrderStatusResponseWithDTO>().ReverseMap();
 
@@ -42,6 +43,7 @@ namespace Libook_API.Mapping
             CreateMap<OrderInfo, OrderInfoResponseDTO>().ReverseMap();
 
             CreateMap<OrderDetailDTO, OrderDetail>().ReverseMap();
+            CreateMap<OrderDetailWithDTO, OrderDetail>().ReverseMap();
             CreateMap<OrderDetail, OrderDetailResponseDTO>().ReverseMap();
             CreateMap<OrderDetail, OrderDetailResponseWithDTO>().ReverseMap();
 
