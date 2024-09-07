@@ -34,6 +34,12 @@ namespace Libook_API.Controllers
         [Route("Register")]
         public async Task<IActionResult> Register([FromBody] CustomerRegisterDTO customerRegisterDTO)
         {
+            var existingUser = await userManager.FindByNameAsync(customerRegisterDTO.Username);
+            if (existingUser != null)
+            {
+                return BadRequest("Username already exists.");
+            }
+
             var identityUser = new IdentityUser
             {
                 UserName = customerRegisterDTO.Username,
