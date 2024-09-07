@@ -85,7 +85,7 @@ namespace Libook_API.Controllers
         [Route("{id:Guid}")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] VoucherRemainUpdateDTO voucherRemainUpdateDTO)
         {
-            var voucherReponse = await voucherService.UpdateAuthorAsync(id, voucherRemainUpdateDTO);
+            var voucherReponse = await voucherService.UpdateVoucherRemainAsync(id, voucherRemainUpdateDTO.Remain);
             if (voucherReponse == null)
             {
                 return NotFound();

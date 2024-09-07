@@ -3,6 +3,7 @@ using Libook_API.Models.Domain;
 using Libook_API.Models.DTO;
 using Libook_API.Repositories.AuthorRepo;
 using Libook_API.Repositories.BookRepo;
+using Libook_API.Repositories.VoucherRepo;
 using System.Linq.Expressions;
 
 namespace Libook_API.Service.BookService
@@ -72,6 +73,21 @@ namespace Libook_API.Service.BookService
             existingBook.AuthorId = bookDTO.AuthorId;
             existingBook.CategoryId = bookDTO.CategoryId;
             existingBook.SupplierId = bookDTO.SupplierId;
+
+            existingBook = await bookRepository.UpdateAsync(existingBook);
+
+            return mapper.Map<BookResponseDTO>(existingBook);
+        }
+
+        public async Task<BookResponseDTO?> UpdateBookRemainAsync(Guid bookId, int bookRemain)
+        {
+            var existingBook = await bookRepository.GetByIdAsync(bookId);
+            if (existingBook == null)
+            {
+                return null;
+            }
+
+            existingBook.Remain = bookRemain;
 
             existingBook = await bookRepository.UpdateAsync(existingBook);
 

@@ -64,14 +64,14 @@ namespace Libook_API.Service.VoucherService
             return voucherResponse;
         }
 
-        public async Task<VoucherResponseDTO?> UpdateAuthorAsync(Guid voucherId, VoucherRemainUpdateDTO voucherRemainUpdateDTO)
+        public async Task<VoucherResponseDTO?> UpdateVoucherRemainAsync(Guid voucherId, int voucherRemain)
         {
             var existingVoucher = await voucherRepository.GetByIdAsync(voucherId);
             if (existingVoucher == null)
             {
                 return null;
             }
-            existingVoucher.Remain = voucherRemainUpdateDTO.Remain;
+            existingVoucher.Remain = voucherRemain;
 
             existingVoucher = await voucherRepository.UpdateAsync(existingVoucher);
 

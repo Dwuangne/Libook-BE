@@ -1,10 +1,18 @@
-﻿namespace Libook_API.Models.DTO
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Libook_API.Models.DTO
 {
     public class OrderStatusDTO
     {
         public string Status { get; set; } = null!; //unpaid pending preparing delivering .....
 
         public Guid OrderId { get; set; }
+    }
+
+    public class OrderStatusWithDTO
+    {
+        [Required]
+        public string Status { get; set; } = null!; //unpaid pending preparing delivering .....
     }
     public class OrderStatusResponseDTO
     {
