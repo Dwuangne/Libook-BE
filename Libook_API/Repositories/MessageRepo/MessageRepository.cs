@@ -8,5 +8,10 @@ namespace Libook_API.Repositories.MessageRepo
         public MessageRepository(LibookDbContext context) : base(context)
         {
         }
+
+        public async Task<IEnumerable<Message>> GetByConversationId(Guid conversationId)
+        {
+            return _dbSet.Where(message => message.ConversationId == conversationId);
+        }
     }
 }

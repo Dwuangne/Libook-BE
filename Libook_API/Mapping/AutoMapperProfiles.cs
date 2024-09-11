@@ -64,6 +64,19 @@ namespace Libook_API.Mapping
 
             CreateMap<WardDTO, Ward>().ReverseMap();
             CreateMap<Ward, WardResponseDTO>().ReverseMap();
+
+            CreateMap<ConversationDTO, Conversation>().ReverseMap();
+            CreateMap<Conversation, ConversationResponseDTO>().ReverseMap();
+
+            CreateMap<ParticipantDTO, Participant>().ReverseMap();
+            CreateMap<ParticipantWithDTO, Participant>().ReverseMap();
+            CreateMap<Participant, ParticipantResponseDTO>().ReverseMap();
+            CreateMap<Participant, ParticipantResponseWithDTO>().ReverseMap();
+
+            CreateMap<MessageDTO, Message>().ReverseMap();
+            CreateMap<MessageWithDTO, Message>().ReverseMap();
+            CreateMap<Message, MessageResponseDTO>().ReverseMap();
+            CreateMap<Message, MessageResponseWithDTO>().ReverseMap();
         }
     }
 }
