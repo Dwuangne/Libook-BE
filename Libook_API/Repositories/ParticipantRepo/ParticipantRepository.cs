@@ -8,5 +8,10 @@ namespace Libook_API.Repositories.ParticipantRepo
         public ParticipantRepository(LibookDbContext context) : base(context)
         {
         }
+
+        public async Task<IEnumerable<Participant>> GetByConversationId(Guid conversationId)
+        {
+            return _dbSet.Where(participant => participant.ConversationId == conversationId);
+        }
     }
 }

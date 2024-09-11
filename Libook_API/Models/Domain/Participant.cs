@@ -5,6 +5,10 @@ namespace Libook_API.Models.Domain;
 
 public partial class Participant
 {
+    public Participant()
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
 
     public DateTime JoinedAt { get; set; }

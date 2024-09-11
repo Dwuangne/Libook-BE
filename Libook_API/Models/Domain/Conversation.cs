@@ -5,6 +5,10 @@ namespace Libook_API.Models.Domain;
 
 public partial class Conversation
 {
+    public Conversation()
+    {
+        Id = Guid.NewGuid();
+    }
     public Guid Id { get; set; }
 
     public string? Name { get; set; }
