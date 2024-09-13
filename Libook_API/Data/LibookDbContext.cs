@@ -48,6 +48,8 @@ public partial class LibookDbContext : DbContext
 
     public virtual DbSet<Participant> Participants { get; set; }
 
+    public virtual DbSet<PaymentOrder> PaymentOrders { get; set; }
+
     public virtual DbSet<Province> Provinces { get; set; }
 
     public virtual DbSet<Supplier> Suppliers { get; set; }
@@ -364,7 +366,6 @@ public partial class LibookDbContext : DbContext
                 .HasForeignKey(d => d.DistrictCode)
                 .HasConstraintName("wards_district_code_fkey");
         });
-
         OnModelCreatingPartial(modelBuilder);
     }
 

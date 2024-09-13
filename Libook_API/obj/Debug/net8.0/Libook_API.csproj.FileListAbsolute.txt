@@ -150,3 +150,4 @@ D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\StarkbankEcdsa.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\EmailTemplate\ConfirmEmailFailureTemplate.html
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\EmailTemplate\ConfirmEmailSuccessTemplate.html
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\payos-lib-backend-dotnet.dll

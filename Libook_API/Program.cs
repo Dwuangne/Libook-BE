@@ -48,6 +48,9 @@ using Libook_API.Repositories.VoucherRepo;
 using Libook_API.Repositories.VoucherActivedRepo;
 using Libook_API.Repositories.WardRepo;
 using Libook_API.Mapping;
+using Net.payOS;
+using Libook_API.Repositories.PaymentOrderRepo;
+using Libook_API.Service.PaymentOrderService;
 
 namespace Libook_API
 {
@@ -58,7 +61,6 @@ namespace Libook_API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -100,6 +102,17 @@ namespace Libook_API
             builder.Services.AddDbContext<LibookAuthDbContext>(
                 options => options.UseSqlServer(builder.Configuration.GetConnectionString("LibookAuthConnectionString")));
 
+            // Register PayOS service
+            builder.Services.AddScoped<PayOS>(provider =>
+            {
+                var configuration = provider.GetRequiredService<IConfiguration>();
+                return new PayOS(
+                    configuration["CheckOutPayOs:Environment:PAYOS_CLIENT_ID"] ?? throw new Exception("Cannot find environment"),
+                    configuration["CheckOutPayOs:Environment:PAYOS_API_KEY"] ?? throw new Exception("Cannot find environment"),
+                    configuration["CheckOutPayOs:Environment:PAYOS_CHECKSUM_KEY"] ?? throw new Exception("Cannot find environment")
+                );
+            });
+
             //Add Services
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IEmailService, SendGridEmailService>();
@@ -120,8 +133,9 @@ namespace Libook_API
             builder.Services.AddScoped<IOrderInfoService, OrderInfoService>();
             builder.Services.AddScoped<IOrderStatusService, OrderStatusService>();
             builder.Services.AddScoped<IParticipantService, ParticipantService>();
-            builder.Services.AddScoped<IProvinceService, ProvinceService>();
+            builder.Services.AddScoped<IPaymentOrderService, PaymentOrderService>();
 
+            builder.Services.AddScoped<IProvinceService, ProvinceService>();
             builder.Services.AddScoped<ISupplierService, SupplierService>();
             builder.Services.AddScoped<IVoucherService, VoucherService>();
             builder.Services.AddScoped<IVoucherActivedService, VoucherActivedService>();
@@ -144,8 +158,9 @@ namespace Libook_API
             builder.Services.AddScoped<IOrderInfoRepository, OrderInfoRepository>();
             builder.Services.AddScoped<IOrderStatusRepository, OrderStatusRepository>();
             builder.Services.AddScoped<IParticipantRepository, ParticipantRepository>();
-            builder.Services.AddScoped<IProvinceRepository, ProvinceRepository>();
+            builder.Services.AddScoped<IPaymentOrderRepository, PaymentOrderRepository>();
 
+            builder.Services.AddScoped<IProvinceRepository, ProvinceRepository>();
             builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
             builder.Services.AddScoped<IVoucherRepository, VoucherRepository>();
             builder.Services.AddScoped<IVoucherActivedRepository, VoucherActivedRepository>();
@@ -194,6 +209,7 @@ namespace Libook_API
                 googleOptions.CallbackPath = "/api/Auth/LoginbyGoogle";
 
             });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

@@ -388,6 +388,58 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Libook_API.Controllers.CheckOutController",
+    "Method": "CreatePaymentLink",
+    "RelativePath": "api/CheckOut/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "checkOutDTO",
+        "Type": "Libook_API.Models.DTO.CheckOutDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.CheckOutController",
+    "Method": "ReturnPayment",
+    "RelativePath": "api/CheckOut/return_url",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "cancel",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "orderCode",
+        "Type": "System.Int64",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Libook_API.Controllers.CommentController",
     "Method": "Create",
     "RelativePath": "api/Comment",

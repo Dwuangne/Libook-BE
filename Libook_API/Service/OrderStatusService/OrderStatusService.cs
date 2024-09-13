@@ -22,6 +22,8 @@ namespace Libook_API.Service.OrderStatusService
             // Map or Convert DTO to Domain Model
             var orderStatusDomain = mapper.Map<OrderStatus>(orderStatusDTO);
 
+            orderStatusDomain.DateCreate = DateTime.Now;    
+
             // Use Domain Model
             orderStatusDomain = await orderStatusRepository.InsertAsync(orderStatusDomain);
 

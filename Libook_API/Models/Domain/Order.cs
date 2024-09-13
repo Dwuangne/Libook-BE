@@ -10,6 +10,7 @@ public partial class Order
         OrderId = Guid.NewGuid();
     }
     public Guid OrderId { get; set; }
+
     public DateTime DateCreate { get; set; }
 
     public double Amount { get; set; }
