@@ -50,6 +50,9 @@ namespace Libook_API.Mapping
             CreateMap<OrderDTO, Order>().ReverseMap();
             CreateMap<Order, OrderResponseDTO>().ReverseMap();
 
+            CreateMap<PaymentOrderDTO, PaymentOrder>().ReverseMap();
+            CreateMap<PaymentOrder, PaymentOrderResponseDTO>().ReverseMap();
+
             CreateMap<VoucherDTO, Voucher>().ReverseMap();
             CreateMap<Voucher, VoucherResponseDTO>().ReverseMap();
 

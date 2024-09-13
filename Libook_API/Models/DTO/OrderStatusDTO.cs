@@ -4,6 +4,12 @@ namespace Libook_API.Models.DTO
 {
     public class OrderStatusDTO
     {
+        public OrderStatusDTO(string status, Guid orderId)
+        {
+            Status = status;
+            OrderId = orderId;
+        }
+
         public string Status { get; set; } = null!; //unpaid pending preparing delivering .....
 
         public Guid OrderId { get; set; }
