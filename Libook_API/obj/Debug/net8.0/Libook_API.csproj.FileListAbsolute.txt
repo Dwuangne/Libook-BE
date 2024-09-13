@@ -151,3 +151,6 @@ D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\EmailTemplate\ConfirmEm
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\EmailTemplate\ConfirmEmailSuccessTemplate.html
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\payos-lib-backend-dotnet.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\PaymentTemplate\PaymentError.html
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\PaymentTemplate\PaymentFail.html
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\PaymentTemplate\PaymentSuccess.html

@@ -51,6 +51,7 @@ using Libook_API.Mapping;
 using Net.payOS;
 using Libook_API.Repositories.PaymentOrderRepo;
 using Libook_API.Service.PaymentOrderService;
+using Libook_API.Service.CheckOutService;
 
 namespace Libook_API
 {
@@ -116,6 +117,7 @@ namespace Libook_API
             //Add Services
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IEmailService, SendGridEmailService>();
+            builder.Services.AddScoped<ICheckOutService, CheckOutService>();
 
             builder.Services.AddScoped<IAuthorService, AuthorService>();
             builder.Services.AddScoped<IBookService, BookService>();
@@ -230,6 +232,11 @@ namespace Libook_API
             {
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images")),
                 RequestPath = "/Images"
+            });
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Template")), 
+                RequestPath = "/Template"
             });
             app.MapControllers();
 
