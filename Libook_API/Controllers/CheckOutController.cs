@@ -1,6 +1,7 @@
 ﻿using Libook_API.Models.DTO;
 using Libook_API.Models.Response;
 using Libook_API.Service.BookService;
+using Libook_API.Service.CheckOutService;
 using Libook_API.Service.OrderService;
 using Libook_API.Service.OrderStatusService;
 using Libook_API.Service.PaymentOrderService;
@@ -22,15 +23,11 @@ namespace Libook_API.Controllers
         private readonly IBookService bookService;
         private readonly IPaymentOrderService paymentOrderService;
         private readonly IOrderStatusService orderStatusService;
+        private readonly ICheckOutService checkOutService;
 
-        public CheckOutController(PayOS payOS, IConfiguration configuration, IOrderService orderService, IBookService bookService, IPaymentOrderService paymentOrderService, IOrderStatusService orderStatusService)
+        public CheckOutController(ICheckOutService checkOutService)
         {
-            this.payOS = payOS;
-            this.configuration = configuration;
-            this.orderService = orderService;
-            this.bookService = bookService;
-            this.paymentOrderService = paymentOrderService;
-            this.orderStatusService = orderStatusService;
+            this.checkOutService = checkOutService;
         }
 
         [HttpPost]
@@ -39,41 +36,7 @@ namespace Libook_API.Controllers
         {
             try
             {
-                // Lấy thông tin đơn hàng từ service
-                var orderResponse = await orderService.GetOrderByIdAsync(checkOutDTO.OrderId);
-
-                // Thêm dữ liệu thanh toán vào PaymentOrder
-                var paymentOrderResponse = await paymentOrderService.AddPaymentOrderAsync(new PaymentOrderDTO( (int)orderResponse.Amount, orderResponse.OrderId));
-
-                // Tạo mã đơn hàng duy nhất
-                long orderCode = paymentOrderResponse.PaymentID;
-
-                // Đọc URL hủy và URL hoàn tất từ cấu hình
-                var cancelUrl = configuration["CheckOutPayOs:Environment:CANCEL_URL"];
-                var returnUrl = configuration["CheckOutPayOs:Environment:RETURN_URL"];
-
-                if (orderResponse == null || orderResponse.PaymentMethod == "COD" || orderResponse.OrderStatuses.Any(s => s.Status == "PAID"))
-                {
-                    return BadRequest(new ResponseObject
-                    {
-                        status = System.Net.HttpStatusCode.BadRequest,
-                        message = "Order is invalid!"
-                    });
-                }
-
-                // Tạo danh sách item từ chi tiết đơn hàng
-                List<ItemData> items = orderResponse.OrderDetails.Select(orderDetail =>
-                {
-                    var bookName = bookService.GetBookByIdAsync(orderDetail.BookId).Result?.Name;
-                    return new ItemData(bookName, orderDetail.Quantity, (int)orderDetail.UnitPrice);
-                }).ToList();
-
-                // Tạo dữ liệu thanh toán
-                PaymentData paymentData = new PaymentData(orderCode, (int)orderResponse.Amount, checkOutDTO.Description, items, cancelUrl, returnUrl);
-
-                // Tạo đường dẫn thanh toán
-                CreatePaymentResult createPayment = await payOS.createPaymentLink(paymentData);
-
+                CreatePaymentResult createPayment = await checkOutService.CreatePaymentLink(checkOutDTO);
                 return Ok(new ResponseObject
                 {
                     status = System.Net.HttpStatusCode.OK,
@@ -96,19 +59,27 @@ namespace Libook_API.Controllers
         [Route("return_url")]
         public async Task<IActionResult> ReturnPayment(string code, string id, bool cancel, string status, long orderCode)
         {
-            if (status == "PAID" && !cancel)
+            try
             {
-                var paymentOrderDomain = await paymentOrderService.GetPaymentOrderByIdAsync(orderCode);
-
-                await orderStatusService.AddOrderStatusAsync(new OrderStatusDTO("PAID", paymentOrderDomain.OrderId));
-
-                return Redirect("/payment/success");
+                if (status == "PAID" && !cancel)
+                {
+                    var orderStatusResponse = await checkOutService.PaymentSuccess(orderCode);
+                    if (orderStatusResponse == null)
+                    {
+                        throw new Exception("Can't update status order!");
+                    }
+                    return Redirect("/Template/PaymentTemplate/PaymentSuccess.html");
+                }
+                else
+                {
+                    return Redirect("/Template/PaymentTemplate/PaymentFail.html");
+                }
             }
-            else if (status == "CANCELLED" && cancel)
+            catch (Exception ex)
             {
-                return Redirect("/payment/cancelled");
+                Console.WriteLine(ex);
+                return Redirect("/Template/PaymentTemplate/PaymentError.html");
             }
-            return Redirect("/payment/error");
         }
     }
 }
