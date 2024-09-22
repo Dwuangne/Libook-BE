@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  libook_api:
+    image: ${DOCKER_REGISTRY-}libookapi
+    build:
+      context: .
+      dockerfile: Libook_API/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      - sqlserver_docker
+    networks:
+      - libook_network
+    restart: always
+    volumes:
+      - images_data:/app/Images
+      - templates_data:/app/Template
+
+  sqlserver_docker:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "YourStrong!Passw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1434:1433"
+    networks:
+      - libook_network
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+
+volumes:
+  sqlserver_data:
+    driver: local
+  images_data:
+    driver: local
+  templates_data:
+    driver: local
+
+networks:
+  libook_network:
+    driver: bridge

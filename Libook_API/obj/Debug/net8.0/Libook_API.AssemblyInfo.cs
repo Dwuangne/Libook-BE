@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("c2b27b7f-903f-4087-b69e-11c6994eab2e")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Libook_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db2f918ccdf6b502fbe2c395a0bea72695e38bbf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed5e2a530ebf4d3d2447d69a13f8e45e7f4677e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Libook_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Libook_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

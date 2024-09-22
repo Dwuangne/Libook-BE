@@ -3,6 +3,7 @@ using Libook_API.Models.Response;
 using Libook_API.Service.AuthorService;
 using Libook_API.Service.CategoryService;
 using Libook_API.Service.VoucherService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libook_API.Controllers
@@ -68,6 +69,7 @@ namespace Libook_API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] VoucherDTO voucherDTO)
         {
             var voucherResponse = await voucherService.AddVoucherAsync(voucherDTO);
@@ -83,6 +85,7 @@ namespace Libook_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] VoucherRemainUpdateDTO voucherRemainUpdateDTO)
         {
             var voucherReponse = await voucherService.UpdateVoucherRemainAsync(id, voucherRemainUpdateDTO.Remain);

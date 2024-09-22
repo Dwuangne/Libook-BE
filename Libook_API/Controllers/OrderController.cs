@@ -6,6 +6,7 @@ using Libook_API.Service.OrderDetailService;
 using Libook_API.Service.OrderService;
 using Libook_API.Service.VoucherActivedService;
 using Libook_API.Service.VoucherService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libook_API.Controllers
@@ -28,6 +29,7 @@ namespace Libook_API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
         {
             var orderResponses = await orderService.GetAllOrderAsync();
@@ -63,6 +65,7 @@ namespace Libook_API.Controllers
 
         [HttpGet]
         [Route("user/{userId:Guid}")]
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> GetByUserId([FromRoute] Guid userId)
         {
             var orderResponses = await orderService.GetOrderByUserIdAsync(userId);
@@ -77,6 +80,7 @@ namespace Libook_API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Create([FromBody] OrderDTO orderDTO)
         {
             foreach (var orderDetail in orderDTO.OrderDetails)

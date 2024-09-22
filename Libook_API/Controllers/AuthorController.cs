@@ -3,6 +3,7 @@ using Libook_API.Data;
 using Libook_API.Models.DTO;
 using Libook_API.Models.Response;
 using Libook_API.Service.AuthorService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 
@@ -54,6 +55,7 @@ namespace Libook_API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] AuthorDTO authorDTO)
         {
             var authorResponse = await authorService.AddAuthorAsync(authorDTO);
@@ -69,6 +71,7 @@ namespace Libook_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] AuthorDTO authorDTO)
         {
             var authorResponse = await authorService.UpdateAuthorAsync(id, authorDTO);

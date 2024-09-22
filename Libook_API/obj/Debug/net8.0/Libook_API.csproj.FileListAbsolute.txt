@@ -154,3 +154,12 @@ D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\payos-lib-backend-dotnet.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\PaymentTemplate\PaymentError.html
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\PaymentTemplate\PaymentFail.html
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Template\PaymentTemplate\PaymentSuccess.html
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.AspNetCore.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Sinks.File.dll

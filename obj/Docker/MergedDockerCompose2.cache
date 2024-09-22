@@ -1,0 +1,134 @@
+name: dockercompose2104330090713286729
+services:
+  libook_api:
+    build:
+      context: D:\Libook\Libook-be
+      dockerfile: Libook_API/Dockerfile
+      args:
+        BUILD_CONFIGURATION: Debug
+        LAUNCHING_FROM_VS: "true"
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: Libook_API
+    container_name: Libook_API
+    depends_on:
+      sqlserver_docker:
+        condition: service_started
+        required: true
+    entrypoint:
+      - dotnet
+      - --roll-forward
+      - Major
+      - /VSTools/DistrolessHelper/DistrolessHelper.dll
+      - --wait
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+    image: libookapi
+    labels:
+      com.microsoft.visual-studio.project-name: Libook_API
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /.nuget/packages  "/app/Libook_API.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: dotnet --roll-forward Major /VSTools/DistrolessHelper/DistrolessHelper.dll --stop dotnet
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      libook_network: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "8080"
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        published: "8081"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    restart: always
+    tty: true
+    volumes:
+      - type: volume
+        source: images_data
+        target: /app/Images
+        volume: {}
+      - type: volume
+        source: templates_data
+        target: /app/Template
+        volume: {}
+      - type: bind
+        source: C:\Users\tquan\AppData\Roaming\Microsoft\UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\tquan\AppData\Roaming\ASP.NET\Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\tquan\vsdbg\vs2017u5
+        target: /remote_debugger
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\tquan\AppData\Roaming\ASP.NET\Https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\tquan\AppData\Roaming\Microsoft\UserSecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Sdks\Microsoft.Docker.Sdk\tools\linux-x64\net8.0
+        target: /VSTools
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\HotReload
+        target: /HotReloadAgent
+        read_only: true
+        bind:
+          create_host_path: true
+  sqlserver_docker:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: YourStrong!Passw0rd
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      libook_network: null
+    ports:
+      - mode: ingress
+        target: 1433
+        published: "1434"
+        protocol: tcp
+    volumes:
+      - type: volume
+        source: sqlserver_data
+        target: /var/opt/mssql
+        volume: {}
+networks:
+  libook_network:
+    name: dockercompose2104330090713286729_libook_network
+    driver: bridge
+volumes:
+  images_data:
+    name: dockercompose2104330090713286729_images_data
+    driver: local
+  sqlserver_data:
+    name: dockercompose2104330090713286729_sqlserver_data
+    driver: local
+  templates_data:
+    name: dockercompose2104330090713286729_templates_data
+    driver: local
