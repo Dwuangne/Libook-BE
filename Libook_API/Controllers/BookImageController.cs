@@ -3,6 +3,7 @@ using Libook_API.Models.Response;
 using Libook_API.Service.AuthorService;
 using Libook_API.Service.BookImageService;
 using Libook_API.Service.BookService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libook_API.Controllers
@@ -66,6 +67,7 @@ namespace Libook_API.Controllers
             return Ok(response);
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] BookImageDTO bookImageDTO)
         {
             var bookImageResponse = await bookImageService.AddBookImageAsync(bookImageDTO);
@@ -81,6 +83,7 @@ namespace Libook_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] BookImageUpdateDTO bookImageUpdateDTO)
         {
             var bookImageResponse = await bookImageService.UpdateBookImageAsync(id, bookImageUpdateDTO);
@@ -99,6 +102,7 @@ namespace Libook_API.Controllers
 
         [HttpDelete]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             var bookImageResponse = await bookImageService.DeleteBookImageAsync(id);
@@ -109,7 +113,7 @@ namespace Libook_API.Controllers
             var response = new ResponseObject
             {
                 status = System.Net.HttpStatusCode.OK,
-                message = "Update book image successfully!",
+                message = "Delete book image successfully!",
                 data = bookImageResponse
             };
             return Ok(response);

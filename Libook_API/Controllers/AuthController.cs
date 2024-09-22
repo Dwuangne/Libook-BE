@@ -150,6 +150,7 @@ namespace Libook_API.Controllers
             string templatePath = result.Succeeded ? successTemplatePath : failedTemplatePath;
             return Content(await System.IO.File.ReadAllTextAsync(templatePath), "text/html");
         }
+
         [HttpGet("LoginbyGoogle")]
         public async Task<IActionResult> LoginbyGoogle()
         {

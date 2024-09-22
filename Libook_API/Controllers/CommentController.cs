@@ -2,6 +2,7 @@
 using Libook_API.Models.Response;
 using Libook_API.Service.AuthorService;
 using Libook_API.Service.CommentService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libook_API.Controllers
@@ -67,6 +68,7 @@ namespace Libook_API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "customer")]
         public async Task<IActionResult> Create([FromBody] CommentDTO commentDTO)
         {
             var commentResponse = await commentService.AddCommentAsync(commentDTO);

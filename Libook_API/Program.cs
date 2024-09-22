@@ -52,6 +52,8 @@ using Net.payOS;
 using Libook_API.Repositories.PaymentOrderRepo;
 using Libook_API.Service.PaymentOrderService;
 using Libook_API.Service.CheckOutService;
+using Libook_API.Middlewares;
+using Serilog;
 
 namespace Libook_API
 {
@@ -60,6 +62,14 @@ namespace Libook_API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            var logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .MinimumLevel.Warning()
+                .CreateLogger();
+
+            builder.Logging.ClearProviders();
+            builder.Logging.AddSerilog(logger);
 
             // Add services to the container.
             builder.Services.AddControllers();
@@ -220,6 +230,8 @@ namespace Libook_API
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseMiddleware<ExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
 

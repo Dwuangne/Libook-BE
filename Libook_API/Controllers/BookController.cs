@@ -5,6 +5,7 @@ using Libook_API.Models.DTO;
 using Libook_API.Models.Response;
 using Libook_API.Service.AuthorService;
 using Libook_API.Service.BookService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
 
@@ -23,14 +24,14 @@ namespace Libook_API.Controllers
 
         [HttpGet]
         public async Task<IActionResult> GetAll(
-             string? filter = null,
-             string? authorId = null,
-             string? categoryId = null,
-             string? supplierId = null,
-             string? orderBy = "Name",
-             bool IsDescending = false,
-             int pageIndex = 1,
-             int pageSize = 12)
+             [FromQuery] string? filter = null,
+             [FromQuery] string? authorId = null,
+             [FromQuery] string? categoryId = null,
+             [FromQuery] string? supplierId = null,
+             [FromQuery] string? orderBy = "Name",
+             [FromQuery] bool IsDescending = false,
+             [FromQuery] int pageIndex = 1,
+             [FromQuery] int pageSize = 12)
         {
             // Start with a base filter
             Expression<Func<Book, bool>> filterExpression = b => b.IsActive;
@@ -107,6 +108,7 @@ namespace Libook_API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] BookDTO bookDTO)
         {
             var bookResponse = await bookService.AddBookAsync(bookDTO);
@@ -122,6 +124,7 @@ namespace Libook_API.Controllers
 
         [HttpPut]
         [Route("{id:Guid}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] BookDTO bookDTO)
         {
             var bookResponse = await bookService.UpdateBookAsync(id, bookDTO);

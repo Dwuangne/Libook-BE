@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libook_API", "Libook_API\Libook_API.csproj", "{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libook_API", "Libook_API\Libook_API.csproj", "{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{555D0BC5-A7BD-46B3-A285-D92AE014D6EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{555D0BC5-A7BD-46B3-A285-D92AE014D6EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{555D0BC5-A7BD-46B3-A285-D92AE014D6EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{555D0BC5-A7BD-46B3-A285-D92AE014D6EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{555D0BC5-A7BD-46B3-A285-D92AE014D6EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

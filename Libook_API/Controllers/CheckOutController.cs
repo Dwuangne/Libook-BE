@@ -5,6 +5,7 @@ using Libook_API.Service.CheckOutService;
 using Libook_API.Service.OrderService;
 using Libook_API.Service.OrderStatusService;
 using Libook_API.Service.PaymentOrderService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +33,7 @@ namespace Libook_API.Controllers
 
         [HttpPost]
         [Route("create")]
+        [Authorize(Roles = "customer")]
         public async Task<IActionResult> CreatePaymentLink(CheckOutDTO checkOutDTO)
         {
             try
@@ -57,6 +59,7 @@ namespace Libook_API.Controllers
 
         [HttpGet]
         [Route("return_url")]
+        [Authorize(Roles = "customer")]
         public async Task<IActionResult> ReturnPayment(string code, string id, bool cancel, string status, long orderCode)
         {
             try
