@@ -28,6 +28,12 @@ namespace Libook_API.Models.DTO
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }
+
+    public class CustomerLoginByGoogleDTO
+    {
+        [Required]
+        public string Token { get; set; }
+    }
     public class CustomerResponseDTO
     {
         public string JwtToken { get; set; }

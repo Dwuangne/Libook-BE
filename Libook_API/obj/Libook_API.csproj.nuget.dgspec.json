@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "Google.Apis.Auth": {
+              "target": "Package",
+              "version": "[1.68.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.Google": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -84,6 +88,14 @@
               "target": "Package",
               "version": "[1.21.0, )"
             },
+            "NSwag.Annotations": {
+              "target": "Package",
+              "version": "[14.1.0, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
             "SendGrid": {
               "target": "Package",
               "version": "[9.29.3, )"
@@ -102,7 +114,7 @@
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.7.3, )"
+              "version": "[6.8.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

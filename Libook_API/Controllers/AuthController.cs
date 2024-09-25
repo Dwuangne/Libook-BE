@@ -8,6 +8,12 @@ using Libook_API.Service.AuthService;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Google;
+using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Swashbuckle.AspNetCore;
+using NSwag.Annotations;
+using Google.Apis.Auth;
 
 namespace Libook_API.Controllers
 {
@@ -20,13 +26,15 @@ namespace Libook_API.Controllers
         private readonly ITokenService tokenRepository;
         private readonly IEmailService emailService;
         private readonly IWebHostEnvironment env;
+        private readonly ILogger<AuthController> logger;
 
-        public AuthController(UserManager<IdentityUser> userManager, ITokenService tokenRepository, IEmailService emailService, IWebHostEnvironment env)
+        public AuthController(UserManager<IdentityUser> userManager, ITokenService tokenRepository, IEmailService emailService, IWebHostEnvironment env, ILogger<AuthController> logger)
         {
             this.userManager = userManager;
             this.tokenRepository = tokenRepository;
             this.emailService = emailService;
             this.env = env;
+            this.logger = logger;
         }
 
         // POST: /api/Auth/Register
@@ -151,62 +159,145 @@ namespace Libook_API.Controllers
             return Content(await System.IO.File.ReadAllTextAsync(templatePath), "text/html");
         }
 
-        [HttpGet("LoginbyGoogle")]
-        public async Task<IActionResult> LoginbyGoogle()
+
+        [HttpPost("google-login")]
+        public async Task<IActionResult> GoogleLogin([FromBody] CustomerLoginByGoogleDTO customerLoginByGoogleDTO)
         {
-            var result = await HttpContext.AuthenticateAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            if (!result.Succeeded)
-            {
-                return BadRequest("Google login failed.");
-            }
+            // Xác minh token JWT nhận được từ phía client
+            var payload = await GoogleJsonWebSignature.ValidateAsync(customerLoginByGoogleDTO.Token);
 
-            // Extract user information from the claims
-            var claims = result.Principal?.Identities.FirstOrDefault()?.Claims;
-            var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+            // Nếu token hợp lệ, bạn có thể truy cập các thông tin từ payload
+            // Ví dụ: email, name, và các claims khác
+            var email = payload.Email;
 
-            if (string.IsNullOrEmpty(email))
-            {
-                return BadRequest("Google login failed. Email not found.");
-            }
+            // Xử lý đăng nhập tại đây, ví dụ: kiểm tra người dùng trong cơ sở dữ liệu, tạo session, v.v.
 
             var user = await userManager.FindByEmailAsync(email);
             if (user == null)
             {
-                // Create a new user if it doesn't exist
+                // Nếu người dùng chưa tồn tại, tạo mới
                 var newUser = new IdentityUser
                 {
                     UserName = email,
                     Email = email,
-                    EmailConfirmed = true  // Consider setting this to true since it's coming from Google
+                    EmailConfirmed = true
                 };
-
                 var createResult = await userManager.CreateAsync(newUser);
                 if (!createResult.Succeeded)
                 {
                     return BadRequest("Failed to create a new user from Google account.");
                 }
-
-                // Assign default role(s) if needed
-                await userManager.AddToRoleAsync(newUser, "Customer"); // Example role
+                await userManager.AddToRoleAsync(newUser, "Customer");
                 user = newUser;
             }
+            else
+            {
+                if (user.PasswordHash != null)
+                {
+                    return BadRequest("Invalid token");
+                }
+            }
 
-            // Generate JWT token for the user
+            // Lấy các role của người dùng
             var roles = await userManager.GetRolesAsync(user);
+
+            // Tạo JWT token cho người dùng
             var jwtToken = tokenRepository.CreateJWTToken(user, roles.ToList());
 
-            var response = new ResponseObject
+            return Ok(new ResponseObject
             {
                 status = System.Net.HttpStatusCode.OK,
                 message = "Google login successful!",
                 data = new CustomerResponseDTO
                 {
-                    JwtToken = jwtToken
+                    JwtToken = jwtToken // Trả về JWT token để client sử dụng cho các request sau
                 }
-            };
-
-            return Ok(response);
+            });
         }
-
     }
+    //Nào đủ năng lực quay lại làm cách này nhé Dwuangoiwwwww
+    //// Initiates Google login challenge
+    //[IgnoreAntiforgeryToken]
+    //[HttpGet("Login-by-Google")]
+    //[AllowAnonymous]
+    //public IActionResult LoginByGoogle()
+    //{
+    //    var state = Guid.NewGuid().ToString(); // Tạo giá trị state
+    //    HttpContext.Session.SetString("OAuthState", state); // Lưu giá trị vào session
+
+    //    var properties = new AuthenticationProperties
+    //    {
+    //        RedirectUri = Url.Action("GoogleResponse", "Auth"),
+    //        Items =
+    //        {
+    //            { "scheme", GoogleDefaults.AuthenticationScheme },
+    //            { "state", state } // Gắn state vào request
+    //        }
+    //    };
+
+    //    return Challenge(properties, GoogleDefaults.AuthenticationScheme);
+    //}
+
+    //[IgnoreAntiforgeryToken]
+    //[HttpGet("signin-google")]
+    //[AllowAnonymous]
+    //public async Task<IActionResult> GoogleResponse()
+    //{
+
+    //    var state = HttpContext.Session.GetString("OAuthState");
+    //    if (state == null || state != Request.Query["state"])
+    //    {
+    //        return BadRequest("Invalid OAuth state.");
+    //    }
+
+    //    var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
+    //    if (!result.Succeeded)
+    //    {
+    //        return BadRequest("Google login failed.");
+    //    }
+
+    //    var claims = result.Principal.Identities.FirstOrDefault()?.Claims;
+    //    var email = claims?.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
+
+    //    // Kiểm tra xem người dùng đã tồn tại chưa
+    //    var user = await userManager.FindByEmailAsync(email);
+    //    if (user == null)
+    //    {
+    //        // Nếu người dùng chưa tồn tại, tạo mới
+    //        var newUser = new IdentityUser
+    //        {
+    //            UserName = email,
+    //            Email = email,
+    //            EmailConfirmed = true
+    //        };
+    //        var createResult = await userManager.CreateAsync(newUser);
+    //        if (!createResult.Succeeded)
+    //        {
+    //            return BadRequest("Failed to create a new user from Google account.");
+    //        }
+    //        await userManager.AddToRoleAsync(newUser, "Customer");
+    //        user = newUser;
+    //    }
+
+    //    // Lấy các role của người dùng
+    //    var roles = await userManager.GetRolesAsync(user);
+
+    //    // Tạo JWT token cho người dùng
+    //    var jwtToken = tokenRepository.CreateJWTToken(user, roles.ToList());
+
+    //    // Đăng nhập user bằng cookie và gắn JWT token vào cookie
+    //    await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, result.Principal);
+
+    //    // Trả về token cho client
+    //    return Ok(new ResponseObject
+    //    {
+    //        status = System.Net.HttpStatusCode.OK,
+    //        message = "Google login successful!",
+    //        data = new CustomerResponseDTO
+    //        {
+    //            JwtToken = jwtToken // Trả về JWT token để client sử dụng cho các request sau
+    //        }
+    //    });
+    //}
 }
+

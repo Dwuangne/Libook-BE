@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Text.Json;
 
 namespace Libook_API.Middlewares
 {
@@ -23,19 +24,32 @@ namespace Libook_API.Middlewares
             {
                 var errorId = Guid.NewGuid();
 
-                // Log This Exception
-                logger.LogError(ex, $"{errorId} : {ex.Message}");
+                // Ghi log chi tiết về lỗi
+                var errorDetails = new
+                {
+                    ErrorId = errorId,
+                    Message = ex.Message,
+                    StackTrace = ex.StackTrace,
+                    InnerException = ex.InnerException?.Message,
+                    Timestamp = DateTime.UtcNow,
+                    RequestPath = httpContext.Request.Path,
+                    RequestMethod = httpContext.Request.Method,
+                    RequestHeaders = httpContext.Request.Headers.ToDictionary(h => h.Key, h => h.Value.ToString()),
+                    UserAgent = httpContext.Request.Headers["User-Agent"].ToString(),
+                    UserIpAddress = httpContext.Connection.RemoteIpAddress?.ToString()
+                };
 
-                // Return A Custom Exrror Response
+                // Ghi log lỗi với thông tin chi tiết
+                logger.LogError(ex, $"Error {errorId}: {JsonSerializer.Serialize(errorDetails)}");
+
+                // Trả về phản hồi lỗi tùy chỉnh
                 httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 httpContext.Response.ContentType = "application/json";
-
                 var error = new
                 {
                     Id = errorId,
-                    ErrorMessage = "Something went wrong! We are looking into resolving this."
+                    ErrorMessage = "Đã xảy ra lỗi! Chúng tôi đang xem xét để giải quyết vấn đề này."
                 };
-
                 await httpContext.Response.WriteAsJsonAsync(error);
             }
         }

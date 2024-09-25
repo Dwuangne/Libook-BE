@@ -59,10 +59,11 @@ namespace Libook_API.Service.CommentService
         {
             var commentDomain = await commentRepository.GetByIdAsync(commentId);
             var commentResponse = mapper.Map<CommentResponsesDTO>(commentDomain);
-
-            var userInfo = await userManager.FindByIdAsync(commentResponse.UserId.ToString());
-            commentResponse.Username = userInfo.UserName;
-
+            if(commentResponse != null)
+            {
+                var userInfo = await userManager.FindByIdAsync(commentResponse.UserId.ToString());
+                commentResponse.Username = userInfo.UserName;
+            }
             return commentResponse;
         }
 
