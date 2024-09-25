@@ -22,6 +22,22 @@
   },
   {
     "ContainingType": "Libook_API.Controllers.AuthController",
+    "Method": "GoogleLogin",
+    "RelativePath": "api/Auth/google-login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "customerLoginByGoogleDTO",
+        "Type": "Libook_API.Models.DTO.CustomerLoginByGoogleDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
@@ -34,16 +50,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Libook_API.Controllers.AuthController",
-    "Method": "LoginbyGoogle",
-    "RelativePath": "api/Auth/LoginbyGoogle",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

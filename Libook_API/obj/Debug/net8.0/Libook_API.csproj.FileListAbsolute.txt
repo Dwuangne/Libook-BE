@@ -163,3 +163,10 @@ D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Settings.Configuration.d
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Serilog.Sinks.File.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\NSwag.Annotations.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Scrutor.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Google.Apis.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Google.Apis.Auth.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Google.Apis.Core.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\System.Management.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
