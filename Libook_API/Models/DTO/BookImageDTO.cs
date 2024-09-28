@@ -7,6 +7,12 @@
         public Guid BookId { get; set; }
     }
 
+    public class BookImageWithDTO
+    {
+        public string? BookImageUrl { get; set; }
+
+    }
+
     public class BookImageUpdateDTO
     {
         public string? BookImageUrl { get; set; }

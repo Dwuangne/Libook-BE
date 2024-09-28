@@ -76,8 +76,8 @@ namespace Libook_API
 
             builder.Logging.ClearProviders();
             builder.Logging.AddSerilog(logger);
-            builder.Logging.AddConsole(); // Ghi log ra console
-            builder.Logging.SetMinimumLevel(LogLevel.Debug); // Ghi log ở mức debug
+            //builder.Logging.AddConsole(); // Ghi log ra console
+            //builder.Logging.SetMinimumLevel(LogLevel.Debug); // Ghi log ở mức debug
 
             // Add services to the container.
             builder.Services.AddControllers();

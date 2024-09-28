@@ -22,6 +22,12 @@ namespace Libook_API.Service.BookService
         {
             // Map or Convert DTO to Domain Model
             var bookDomain = mapper.Map<Book>(bookDTO);
+            
+            bookDomain.ImageUrl = bookDomain.BookImages.First().BookImageUrl;
+            foreach (var bookImage in bookDomain.BookImages)
+            {
+                bookImage.BookId = bookDomain.Id;
+            }
 
             // Use Domain Model to create Author
             bookDomain = await bookRepository.InsertAsync(bookDomain);

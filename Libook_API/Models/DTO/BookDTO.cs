@@ -23,8 +23,6 @@ namespace Libook_API.Models.DTO
         [Range(1, int.MaxValue, ErrorMessage = "Remain must be greater than 0")]
         public int Remain { get; set; }
 
-        public string ImageUrl { get; set; }
-
         public bool IsActive { get; set; }
 
         public Guid AuthorId { get; set; }
@@ -32,6 +30,8 @@ namespace Libook_API.Models.DTO
         public Guid CategoryId { get; set; }
 
         public Guid SupplierId { get; set; }
+
+        public virtual ICollection<BookImageWithDTO> BookImages { get; set; }
     }
 
     public class BookResponseDTO
