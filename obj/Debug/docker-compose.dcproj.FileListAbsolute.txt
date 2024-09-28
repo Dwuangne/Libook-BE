@@ -14,7 +14,6 @@ D:\Libook\Libook-be\bin\Debug\payos-lib-backend-dotnet.dll
 D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.Identity.Core.dll
 D:\Libook\Libook-be\bin\Debug\Microsoft.EntityFrameworkCore.dll
 D:\Libook\Libook-be\bin\Debug\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-D:\Libook\Libook-be\bin\Debug\Microsoft.AspNetCore.Authentication.Google.dll
 D:\Libook\Libook-be\bin\Debug\AutoMapper.dll
 D:\Libook\Libook-be\bin\Debug\SendGrid.dll
 D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.Identity.Stores.dll
@@ -46,3 +45,9 @@ D:\Libook\Libook-be\obj\Debug\docker-c.35A3FFBA.Up2Date
 D:\Libook\Libook-be\bin\Debug\Serilog.dll
 D:\Libook\Libook-be\bin\Debug\Serilog.Sinks.Console.dll
 D:\Libook\Libook-be\bin\Debug\Serilog.Extensions.Logging.dll
+D:\Libook\Libook-be\bin\Debug\Scrutor.dll
+D:\Libook\Libook-be\bin\Debug\Google.Apis.Auth.dll
+D:\Libook\Libook-be\bin\Debug\Google.Apis.Core.dll
+D:\Libook\Libook-be\bin\Debug\System.Management.dll
+D:\Libook\Libook-be\bin\Debug\Google.Apis.dll
+D:\Libook\Libook-be\bin\Debug\System.CodeDom.dll
