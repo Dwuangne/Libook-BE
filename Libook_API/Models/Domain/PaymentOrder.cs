@@ -8,7 +8,7 @@ namespace Libook_API.Models.Domain
         [Key]
         public long PaymentID { get; set; }
 
-        public decimal Amount { get; set; }
+        public double Amount { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
