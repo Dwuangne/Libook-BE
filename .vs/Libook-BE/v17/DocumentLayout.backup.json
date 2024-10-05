@@ -62,8 +62,7 @@
               "RelativeToolTip": "Libook_API\\Repositories\\ConversationRepo\\ConverstationRepository.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T05:21:43.752Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T05:21:43.752Z"
             },
             {
               "$type": "Document",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "Libook_API\\Service\\ConversationService\\ConversationService.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAkwFgAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T05:20:37.667Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T05:20:37.667Z"
             },
             {
               "$type": "Document",
@@ -88,8 +86,7 @@
               "RelativeToolTip": "Libook_API\\Service\\ConversationService\\IConversationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T05:20:37.167Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T05:20:37.167Z"
             },
             {
               "$type": "Document",
@@ -101,8 +98,7 @@
               "RelativeToolTip": "Libook_API\\Controllers\\ConversationController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAgwD4AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T05:18:28.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T05:18:28.639Z"
             },
             {
               "$type": "Document",
@@ -110,9 +106,9 @@
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\AuthService\\TokenService.cs",
               "RelativeDocumentMoniker": "Libook_API\\Service\\AuthService\\TokenService.cs",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\AuthService\\TokenService.cs*",
-              "RelativeToolTip": "Libook_API\\Service\\AuthService\\TokenService.cs*",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAtwBwAAAANAAAAAAAAAA==",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\AuthService\\TokenService.cs",
+              "RelativeToolTip": "Libook_API\\Service\\AuthService\\TokenService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAIAwwBwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-05T05:16:10.727Z",
               "EditorCaption": ""
@@ -127,8 +123,7 @@
               "RelativeToolTip": "Libook_API\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAGIAAAAAAAAAAAAgwG4AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T05:15:45.384Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T05:15:45.384Z"
             }
           ]
         }
