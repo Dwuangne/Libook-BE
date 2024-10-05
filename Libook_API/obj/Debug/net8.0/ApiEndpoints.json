@@ -228,8 +228,8 @@
         "IsRequired": true
       },
       {
-        "Name": "bookDTO",
-        "Type": "Libook_API.Models.DTO.BookDTO",
+        "Name": "bookUpdateDTO",
+        "Type": "Libook_API.Models.DTO.BookUpdateDTO",
         "IsRequired": true
       }
     ],
@@ -510,7 +510,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "ContainingType": "Libook_API.Controllers.CommentImageController",
     "Method": "GetAll",
     "RelativePath": "api/CommentImage",
     "HttpMethod": "GET",
@@ -520,7 +520,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "ContainingType": "Libook_API.Controllers.CommentImageController",
     "Method": "Create",
     "RelativePath": "api/CommentImage",
     "HttpMethod": "POST",
@@ -536,7 +536,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "ContainingType": "Libook_API.Controllers.CommentImageController",
     "Method": "GetById",
     "RelativePath": "api/CommentImage/{id}",
     "HttpMethod": "GET",
@@ -552,7 +552,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "ContainingType": "Libook_API.Controllers.CommentImageController",
     "Method": "Update",
     "RelativePath": "api/CommentImage/{id}",
     "HttpMethod": "PUT",
@@ -573,7 +573,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "ContainingType": "Libook_API.Controllers.CommentImageController",
     "Method": "Delete",
     "RelativePath": "api/CommentImage/{id}",
     "HttpMethod": "DELETE",
@@ -589,7 +589,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Libook_API.Controllers.CommentImage",
+    "ContainingType": "Libook_API.Controllers.CommentImageController",
     "Method": "GetByBookId",
     "RelativePath": "api/CommentImage/comment/{commentId}",
     "HttpMethod": "GET",
@@ -648,7 +648,7 @@
   },
   {
     "ContainingType": "Libook_API.Controllers.ConversationController",
-    "Method": "GetByConversationId",
+    "Method": "GetByUsername",
     "RelativePath": "api/Conversation/user/{userId}",
     "HttpMethod": "GET",
     "IsController": true,

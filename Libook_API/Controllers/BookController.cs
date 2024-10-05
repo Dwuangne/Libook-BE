@@ -125,9 +125,9 @@ namespace Libook_API.Controllers
         [HttpPut]
         [Route("{id:Guid}")]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] BookDTO bookDTO)
+        public async Task<IActionResult> Update([FromRoute] Guid id, [FromBody] BookUpdateDTO bookUpdateDTO)
         {
-            var bookResponse = await bookService.UpdateBookAsync(id, bookDTO);
+            var bookResponse = await bookService.UpdateBookAsync(id, bookUpdateDTO);
             if (bookResponse == null)
             {
                 return NotFound();

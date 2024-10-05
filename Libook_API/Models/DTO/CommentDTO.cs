@@ -13,6 +13,8 @@ namespace Libook_API.Models.DTO
         public Guid UserId { get; set; }
 
         public Guid BookId { get; set; }
+
+        public virtual ICollection<CommentImageWithDTO> CommentImages { get; set; }
     }
 
     public class CommentResponsesDTO

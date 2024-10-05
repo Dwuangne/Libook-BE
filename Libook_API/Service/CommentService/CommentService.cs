@@ -27,7 +27,11 @@ namespace Libook_API.Service.CommentService
             var commentDomain = mapper.Map<Comment>(commentDTO);
 
             commentDomain.DateCreate = DateTime.Now;
-            commentDomain.UserId = commentDTO.UserId;
+
+            foreach (var commentImage in commentDomain.CommentImages)
+            {
+                commentImage.CommentId = commentDomain.Id;
+            }
 
             // Use Domain Model to create 
             commentDomain = await commentRepository.InsertAsync(commentDomain);

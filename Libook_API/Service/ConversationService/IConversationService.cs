@@ -6,7 +6,7 @@ namespace Libook_API.Service.ConversationService
     {
         Task<IEnumerable<ConversationResponseDTO?>> GetAllConversationAsync();
         Task<ConversationResponseDTO?> GetConversationByIdAsync(Guid conversationId);
-        Task<IEnumerable<ConversationResponseDTO?>?> GetConversationByUserIdAsync(Guid userId);
+        Task<IEnumerable<ConversationResponseDTO?>> GetConversationByUserIdAsync(Guid userId);
         Task<ConversationResponseDTO> AddConversationAsync(ConversationDTO conversationDTO);
     }
 }

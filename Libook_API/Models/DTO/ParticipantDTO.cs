@@ -29,5 +29,7 @@ namespace Libook_API.Models.DTO
         public DateTime JoinedAt { get; set; }
 
         public Guid UserId { get; set; }
+
+        public string Username { get; set; }
     }
 }

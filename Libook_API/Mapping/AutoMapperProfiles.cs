@@ -18,6 +18,7 @@ namespace Libook_API.Mapping
             CreateMap<Supplier, SupplierResponseDTO>().ReverseMap();
 
             CreateMap<BookDTO, Book>().ReverseMap();
+            CreateMap<BookUpdateDTO, Book>().ReverseMap();
             CreateMap<Book, BookResponseDTO>().ReverseMap();
 
             CreateMap<BookImageDTO, BookImage>().ReverseMap();

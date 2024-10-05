@@ -4,17 +4,20 @@ using Libook_API.Models.DTO;
 using Libook_API.Repositories.ConversationRepo;
 using Libook_API.Repositories.MessageRepo;
 using Libook_API.Repositories.OrderRepo;
+using Microsoft.AspNetCore.Identity;
 
 namespace Libook_API.Service.ConversationService
 {
     public class ConversationService : IConversationService
     {
         private readonly IConverstationRepository converstationRepository;
+        private readonly UserManager<IdentityUser> userManager;
         private readonly IMapper mapper;
 
-        public ConversationService(IConverstationRepository converstationRepository, IMapper mapper)
+        public ConversationService(IConverstationRepository converstationRepository,UserManager<IdentityUser> userManager, IMapper mapper)
         {
             this.converstationRepository = converstationRepository;
+            this.userManager = userManager;
             this.mapper = mapper;
         }
         public async Task<ConversationResponseDTO> AddConversationAsync(ConversationDTO conversationDTO)
@@ -41,7 +44,13 @@ namespace Libook_API.Service.ConversationService
 
             conversationDomain = await converstationRepository.InsertAsync(conversationDomain);
 
-            return mapper.Map<ConversationResponseDTO>(conversationDomain);
+            var conversationResponse = mapper.Map<ConversationResponseDTO>(conversationDomain);
+            foreach (var participant in conversationResponse.Participants)
+            {
+                var userInfo = await userManager.FindByIdAsync(participant.UserId.ToString());
+                participant.Username = userInfo.UserName;
+            }
+            return conversationResponse;
         }
 
         public async Task<IEnumerable<ConversationResponseDTO?>> GetAllConversationAsync()
@@ -49,25 +58,55 @@ namespace Libook_API.Service.ConversationService
             var conversationDomains = await converstationRepository.GetAllAsync();
 
             // Giả sử authorDomains là danh sách các đối tượng AuthorDomain
-            var conversationResponse = mapper.Map<List<ConversationResponseDTO>>(conversationDomains);
+            var conversationResponses = mapper.Map<List<ConversationResponseDTO>>(conversationDomains);
 
-            return conversationResponse;
+            foreach (var conversationResponse in conversationResponses)
+            {
+                foreach(var participant in conversationResponse.Participants)
+                {
+                    var userInfo = await userManager.FindByIdAsync(participant.UserId.ToString());
+                    participant.Username = userInfo.UserName;
+                }
+            }
+            return conversationResponses;
         }
 
         public async Task<ConversationResponseDTO?> GetConversationByIdAsync(Guid conversationId)
         {
             var conversationDomain = await converstationRepository.GetByIdAsync(conversationId);
-            return mapper.Map<ConversationResponseDTO>(conversationDomain);
-        }
 
-        public async Task<IEnumerable<ConversationResponseDTO?>?> GetConversationByUserIdAsync(Guid userId)
-        {
-            var conversationDomains = await converstationRepository.GetByUserId(userId);
-
-            // Giả sử authorDomains là danh sách các đối tượng AuthorDomain
-            var conversationResponse = mapper.Map<List<ConversationResponseDTO>>(conversationDomains);
-
+            var conversationResponse = mapper.Map<ConversationResponseDTO>(conversationDomain);
+            foreach (var participant in conversationResponse.Participants)
+            {
+                var userInfo = await userManager.FindByIdAsync(participant.UserId.ToString());
+                participant.Username = userInfo.UserName;
+            }
             return conversationResponse;
         }
+
+        public async Task<IEnumerable<ConversationResponseDTO?>> GetConversationByUserIdAsync(Guid userId)
+        {
+            // Lấy danh sách các cuộc hội thoại dựa trên UserId
+            var conversationDomains = await converstationRepository.GetByUserId(userId);
+
+            // Ánh xạ các đối tượng từ domain sang DTO
+            var conversationResponses = mapper.Map<List<ConversationResponseDTO>>(conversationDomains);
+
+            // Sử dụng linq để cập nhật username cho từng participant
+            foreach (var conversationResponse in conversationResponses)
+            {
+                foreach (var participant in conversationResponse.Participants)
+                {
+                    var userInfo = await userManager.FindByIdAsync(participant.UserId.ToString());
+                    if (userInfo != null)
+                    {
+                        participant.Username = userInfo.UserName;
+                    }
+                }
+            }
+
+            return conversationResponses;
+        }
+
     }
 }
