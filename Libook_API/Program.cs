@@ -1,4 +1,5 @@
 ﻿using Libook_API.Data;
+using Libook_API.Messages;
 using Libook_API.Repositories.AuthorRepo;
 using Libook_API.Repositories.BookImageRepo;
 using Libook_API.Repositories.BookRepo;
@@ -76,10 +77,12 @@ namespace Libook_API
 
             builder.Logging.ClearProviders();
             builder.Logging.AddSerilog(logger);
+
             //builder.Logging.AddConsole(); // Ghi log ra console
             //builder.Logging.SetMinimumLevel(LogLevel.Debug); // Ghi log ở mức debug
 
-            // Add services to the container.
+            // Add services to the container
+            builder.Services.AddSignalR();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(options =>
@@ -144,18 +147,18 @@ namespace Libook_API
             // AutoMapper configuration
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
-            // Cấu hình Distributed Memory Cache
-            builder.Services.AddDistributedMemoryCache();
+            //// Cấu hình Distributed Memory Cache
+            //builder.Services.AddDistributedMemoryCache();
 
-            // Session configuration
-            builder.Services.AddSession(options =>
-            {
-                options.IdleTimeout = TimeSpan.FromMinutes(60*24*30); // Thời gian hết hạn session
-                options.Cookie.HttpOnly = true;
-                options.Cookie.IsEssential = true;
-                options.Cookie.SameSite = SameSiteMode.None; // Đảm bảo SameSite=None
-                options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Luôn yêu cầu cookie bảo mật
-            });
+            //// Session configuration
+            //builder.Services.AddSession(options =>
+            //{
+            //    options.IdleTimeout = TimeSpan.FromMinutes(60*24*30); // Thời gian hết hạn session
+            //    options.Cookie.HttpOnly = true;
+            //    options.Cookie.IsEssential = true;
+            //    options.Cookie.SameSite = SameSiteMode.None; // Đảm bảo SameSite=None
+            //    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Luôn yêu cầu cookie bảo mật
+            //});
 
             // Identity configuration
             builder.Services.AddIdentityCore<IdentityUser>()
@@ -238,11 +241,15 @@ namespace Libook_API
             {
                 options.AddPolicy("AllowAll", builder =>
                 {
-                    builder.AllowAnyOrigin()
+                    builder.WithOrigins("http://localhost:3000")
                             .AllowAnyMethod()
-                            .AllowAnyHeader();
+                            .AllowAnyHeader()
+                            .AllowCredentials();
+
                 });
             });
+
+            builder.Services.AddSingleton<ShareDb>();
 
             // Antiforgery configuration
             //builder.Services.AddAntiforgery(options =>
@@ -261,7 +268,7 @@ namespace Libook_API
 
             app.UseMiddleware<ExceptionHandlerMiddleware>();
 
-            app.UseSession();
+            //app.UseSession();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
             app.UseAuthentication();
@@ -280,6 +287,7 @@ namespace Libook_API
             });
 
             app.MapControllers();
+            app.MapHub<ChatHub>("/chathub");
             app.Run();
         }
     }

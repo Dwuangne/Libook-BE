@@ -51,3 +51,5 @@ D:\Libook\Libook-be\bin\Debug\Google.Apis.Core.dll
 D:\Libook\Libook-be\bin\Debug\System.Management.dll
 D:\Libook\Libook-be\bin\Debug\Google.Apis.dll
 D:\Libook\Libook-be\bin\Debug\System.CodeDom.dll
+D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.DependencyModel.dll

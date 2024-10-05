@@ -63,7 +63,7 @@ namespace Libook_API.Service.BookService
             return mapper.Map<BookResponseDTO>(bookDomain);
         }
 
-        public async Task<BookResponseDTO?> UpdateBookAsync(Guid bookId, BookDTO bookDTO)
+        public async Task<BookResponseDTO?> UpdateBookAsync(Guid bookId, BookUpdateDTO bookUpdateDTO)
         {
             var existingBook = await bookRepository.GetByIdAsync(bookId);
             if (existingBook == null)
@@ -71,14 +71,14 @@ namespace Libook_API.Service.BookService
                 return null;
             }
 
-            existingBook.Name = bookDTO.Name;
-            existingBook.Description = bookDTO.Description;
-            existingBook.Price = bookDTO.Price;
-            existingBook.PrecentDiscount = bookDTO.PrecentDiscount;
-            existingBook.Remain = bookDTO.Remain;
-            existingBook.AuthorId = bookDTO.AuthorId;
-            existingBook.CategoryId = bookDTO.CategoryId;
-            existingBook.SupplierId = bookDTO.SupplierId;
+            existingBook.Name = bookUpdateDTO.Name;
+            existingBook.Description = bookUpdateDTO.Description;
+            existingBook.Price = bookUpdateDTO.Price;
+            existingBook.PrecentDiscount = bookUpdateDTO.PrecentDiscount;
+            existingBook.Remain = bookUpdateDTO.Remain;
+            existingBook.AuthorId = bookUpdateDTO.AuthorId;
+            existingBook.CategoryId = bookUpdateDTO.CategoryId;
+            existingBook.SupplierId = bookUpdateDTO.SupplierId;
 
             existingBook = await bookRepository.UpdateAsync(existingBook);
 

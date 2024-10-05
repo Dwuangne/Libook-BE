@@ -9,13 +9,26 @@ namespace Libook_API.Repositories.ConversationRepo
     {
         public ConverstationRepository(LibookDbContext context) : base(context)
         {
-        }
 
+        }
+        public async Task<IEnumerable<Conversation>> GetAllAsync()
+        {
+            return await _dbSet
+                .Include(c => c.Participants)  // Bao gồm những người tham gia vào cuộc hội thoại    
+                .ToListAsync();
+        }
+        public async Task<Conversation?> GetByIdAsync(object id)
+        {
+            return await _dbSet
+                .Include(c => c.Participants)  // Bao gồm những người tham gia vào cuộc hội thoại    
+                .Include(c => c.Messages.OrderBy(m => m.SendAt))       // Bao gồm cả các tin nhắn trong cuộc hội thoại
+                .FirstOrDefaultAsync(c => c.Id == (Guid)id);  // Sử dụng guidId thay vì object id
+        }
         public async Task<IEnumerable<Conversation>> GetByUserId(Guid userId)
         {
             return await _dbSet
                 .Include(c => c.Participants)  // Bao gồm những người tham gia vào cuộc hội thoại
-                .Include(c => c.Messages)      // Bao gồm cả các tin nhắn trong cuộc hội thoại
+                //.Include(c => c.Messages)      // Bao gồm cả các tin nhắn trong cuộc hội thoại
                 .Where(c => c.Participants.Any(p => p.UserId == userId))  // Lọc theo Participant với UserID
                 .ToListAsync();
         }

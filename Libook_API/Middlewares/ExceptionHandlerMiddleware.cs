@@ -29,14 +29,14 @@ namespace Libook_API.Middlewares
                 {
                     ErrorId = errorId,
                     Message = ex.Message,
-                    StackTrace = ex.StackTrace,
-                    InnerException = ex.InnerException?.Message,
-                    Timestamp = DateTime.UtcNow,
-                    RequestPath = httpContext.Request.Path,
-                    RequestMethod = httpContext.Request.Method,
-                    RequestHeaders = httpContext.Request.Headers.ToDictionary(h => h.Key, h => h.Value.ToString()),
-                    UserAgent = httpContext.Request.Headers["User-Agent"].ToString(),
-                    UserIpAddress = httpContext.Connection.RemoteIpAddress?.ToString()
+                    //StackTrace = ex.StackTrace,
+                    //InnerException = ex.InnerException?.Message,
+                    //Timestamp = DateTime.UtcNow,
+                    //RequestPath = httpContext.Request.Path,
+                    //RequestMethod = httpContext.Request.Method,
+                    //RequestHeaders = httpContext.Request.Headers.ToDictionary(h => h.Key, h => h.Value.ToString()),
+                    //UserAgent = httpContext.Request.Headers["User-Agent"].ToString(),
+                    //UserIpAddress = httpContext.Connection.RemoteIpAddress?.ToString()
                 };
 
                 // Ghi log lỗi với thông tin chi tiết

@@ -2,6 +2,7 @@
 using Libook_API.Models.Response;
 using Libook_API.Service.ConversationService;
 using Libook_API.Service.MessageService;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Libook_API.Controllers
@@ -52,8 +53,8 @@ namespace Libook_API.Controllers
         }
 
         [HttpGet]
-        [Route("user/{userId:Guid}")]
-        public async Task<IActionResult> GetByConversationId([FromRoute] Guid userId)
+        [Route("user/{userId:guid}")]
+        public async Task<IActionResult> GetByUsername([FromRoute] Guid userId)
         {
             var conversationResponse = await conversationService.GetConversationByUserIdAsync(userId);
 

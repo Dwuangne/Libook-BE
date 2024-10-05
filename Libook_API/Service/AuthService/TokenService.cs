@@ -27,6 +27,7 @@ namespace Libook_API.Service.AuthService
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
+            claims.Add(new Claim("id", user.Id));
 
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]));

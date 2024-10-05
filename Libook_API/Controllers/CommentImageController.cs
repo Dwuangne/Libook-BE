@@ -9,11 +9,11 @@ namespace Libook_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CommentImage : Controller
+    public class CommentImageController : Controller
     {
         private readonly ICommentImageService commentImageService;
 
-        public CommentImage(ICommentImageService commentImageService)
+        public CommentImageController(ICommentImageService commentImageService)
         {
             this.commentImageService = commentImageService;
         }

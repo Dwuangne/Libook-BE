@@ -7,6 +7,12 @@
         public Guid CommentId { get; set; }
     }
 
+    public class CommentImageWithDTO
+    {
+        public string? CommentImageUrl { get; set; }
+
+    }
+
     public class CommentImageUpdateDTO
     {
         public string? CommentImageUrl { get; set; }

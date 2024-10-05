@@ -71,9 +71,6 @@ namespace Libook_API.Controllers
                         // Tạo URL xác nhận email
                         var confirmationLink = Url.Action(nameof(ConfirmEmail), "Auth", new { userId = identityUser.Id, token = token }, Request.Scheme);
 
-                        // Gửi email chứa link xác nhận
-                        //await emailService.SendEmailAsync(identityUser.Email, "Confirm your email", $"Please confirm your account by clicking this link: <a href='{confirmationLink}'>link</a>");
-
                         var confirmEmailDTO = new ConfirmEmailDTO
                         {
                             Username = identityUser.UserName,
@@ -86,7 +83,6 @@ namespace Libook_API.Controllers
                     }
                 }
             }
-
             return BadRequest("Something went wrong");
         }
 
@@ -215,6 +211,7 @@ namespace Libook_API.Controllers
             });
         }
     }
+}
     //Nào đủ năng lực quay lại làm cách này nhé Dwuangoiwwwww
     //// Initiates Google login challenge
     //[IgnoreAntiforgeryToken]
@@ -299,5 +296,5 @@ namespace Libook_API.Controllers
     //        }
     //    });
     //}
-}
+//}
 
