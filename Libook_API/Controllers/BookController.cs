@@ -28,7 +28,7 @@ namespace Libook_API.Controllers
              [FromQuery] string? authorId = null,
              [FromQuery] string? categoryId = null,
              [FromQuery] string? supplierId = null,
-             [FromQuery] string? orderBy = "Name",
+             [FromQuery] string? orderBy = "name",
              [FromQuery] bool IsDescending = false,
              [FromQuery] int pageIndex = 1,
              [FromQuery] int pageSize = 12)
@@ -61,10 +61,14 @@ namespace Libook_API.Controllers
             }
 
             // Map string orderBy to the appropriate property (use switch or reflection if necessary)
-            Func<IQueryable<Book>, IOrderedQueryable<Book>> orderByFunc = q => q.OrderBy(b => b.Name); // Default ordering by Name
+            Func<IQueryable<Book>, IOrderedQueryable<Book>> orderByFunc = null; // Default ordering by Name
             if (orderBy?.ToLower() == "price")
             {
                 orderByFunc = IsDescending ? q => q.OrderByDescending(b => b.Price) : q => q.OrderBy(b => b.Price);
+            }
+            if(orderBy?.ToLower() == "name")
+            {
+                orderByFunc = IsDescending ? q => q.OrderByDescending(b => b.Name) : q => q.OrderBy(b => b.Name);
             }
 
             var bookResponses = await bookService.GetBookAsync(
