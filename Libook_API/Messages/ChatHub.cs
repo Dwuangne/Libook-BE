@@ -5,6 +5,7 @@ using Libook_API.Models.DTO;
 using Libook_API.Service.ConversationService;
 using Libook_API.Service.MessageService;
 using Libook_API.Service.ParticipantService;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.SignalR;
 
@@ -15,46 +16,82 @@ namespace Libook_API.Messages
         private readonly IMessageService messageService;
         private readonly IConversationService conversationService;
         private readonly IParticipantService participantService;
-        private readonly ShareDb shareDb;
+        private readonly UserManager<IdentityUser> userManager;
 
-        public ChatHub(IMessageService messageService, IConversationService conversationService, IParticipantService participantService, ShareDb shareDb)
+        public ChatHub(IMessageService messageService, IConversationService conversationService, IParticipantService participantService, UserManager<IdentityUser> userManager)
         {
             this.messageService = messageService;
             this.conversationService = conversationService;
             this.participantService = participantService;
-            this.shareDb = shareDb;
+            this.userManager = userManager;
         }
-        public async Task SendMessage(string message)
-        {
-            if (shareDb.Connections.TryGetValue(Context.ConnectionId, out UserConectionDTO conn))
-            {
-                // Logic to save message in database can be added here
 
-                // Broadcast message to all connected clients
-                await Clients.All.SendAsync("ReceiveSepecificMessage", conn.Username, message);
+        public async Task JoinConversation(Guid conversationId)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, conversationId.ToString());
+        }
+
+        public async Task SendMessage(Guid conversationId, string content, Guid userId)
+        {
+            var conversationResponse = await conversationService.GetConversationByIdAsync(conversationId);
+
+            if (conversationResponse != null)
+            {
+                var isParticipant = conversationResponse.Participants.Any(p => p.UserId == userId);
+
+                if (!isParticipant)
+                {
+                    var participantDTO = new ParticipantDTO { UserId = userId, ConversationId = conversationId };
+                    await participantService.AddParticipantAsync(participantDTO);
+                    await Groups.AddToGroupAsync(Context.ConnectionId, conversationResponse.Id.ToString());
+                    await Clients.Group(conversationResponse.Id.ToString()).SendAsync("JoinSpecificConversation", userId);
+                }
+
+                var messageDTO = new MessageDTO
+                {
+                    Content = content,
+                    ConversationId = conversationId,
+                    UserId = userId,
+                };
+                var messageResponse = await messageService.AddMessageAsync(messageDTO);
+
+                await Clients.Group(conversationResponse.Id.ToString()).SendAsync("ReceiveSpecificMessage", messageResponse);
+            }
+            else
+            {
+                throw new Exception("Conversation not found");
             }
         }
 
-        public async Task JoinSepecificChatRoom (UserConectionDTO conn)
+        public async Task StartConversation(Guid userId, string content)
         {
-            await Groups.AddToGroupAsync(Context.ConnectionId, conn.ChatRoom);
+            var userInfo = await userManager.FindByIdAsync(userId.ToString());
 
-            shareDb.Connections[Context.ConnectionId] = conn;
+            if (userInfo == null)
+            {
+                throw new Exception("User not found");
+            }
 
-            await Clients.Group(conn.ChatRoom).SendAsync("JoinSepecificChatRoom", $"{conn.Username} has joined {conn.ChatRoom}");
+            var messageWithDTO = new MessageWithDTO { Content = content, UserId = userId };
+            var participantWithDTO = new ParticipantWithDTO { UserId = userId };
+            var conversationDTO = new ConversationDTO
+            {
+                Messages = new List<MessageWithDTO> { messageWithDTO },
+                Participants = new List<ParticipantWithDTO> { participantWithDTO }
+            };
+
+            var conversationResponse = await conversationService.AddConversationAsync(conversationDTO);
+
+            if (conversationResponse == null)
+            {
+                throw new Exception("Failed to create conversation");
+            }
+
+            await Groups.AddToGroupAsync(Context.ConnectionId, conversationResponse.Id.ToString());
+
+            await Clients.Group(conversationResponse.Id.ToString()).SendAsync("NotifyConversationCreatedToCustomer", conversationResponse);
+
+            await Clients.All.SendAsync("NotifyConversationCreatedToAdmin", conversationResponse);
         }
-        //public override async Task OnConnectedAsync()
-        //{
-        //    // Thông báo khi có người tham gia
-        //    await Clients.All.SendAsync("UserJoined", Context.ConnectionId);
-        //    await base.OnConnectedAsync();
-        //}
-
-        //public override async Task OnDisconnectedAsync(Exception exception)
-        //{
-        //    // Thông báo khi có người rời khỏi chat
-        //    await Clients.All.SendAsync("UserLeft", Context.ConnectionId);
-        //    await base.OnDisconnectedAsync(exception);
-        //}
     }
 }

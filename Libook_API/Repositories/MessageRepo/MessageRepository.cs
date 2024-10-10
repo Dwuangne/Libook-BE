@@ -1,5 +1,6 @@
 ﻿using Libook_API.Data;
 using Libook_API.Models.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace Libook_API.Repositories.MessageRepo
 {
@@ -9,9 +10,15 @@ namespace Libook_API.Repositories.MessageRepo
         {
         }
 
-        public async Task<IEnumerable<Message>> GetByConversationId(Guid conversationId)
+        public async Task<IEnumerable<Message>> GetByConversationId(Guid conversationId, int pageNumber, int pageSize)
         {
-            return _dbSet.Where(message => message.ConversationId == conversationId);
+            return await _dbSet
+                .Where(message => message.ConversationId == conversationId)
+                .OrderByDescending(message => message.SendAt)  // Lấy tin nhắn mới nhất trước
+                .Skip((pageNumber - 1) * pageSize)  // Bỏ qua tin nhắn đã lấy
+                .Take(pageSize)  // Lấy số lượng tin nhắn theo pageSize
+                .ToListAsync();
         }
+
     }
 }
