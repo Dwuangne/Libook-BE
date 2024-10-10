@@ -46,9 +46,9 @@ namespace Libook_API.Service.MessageService
             return mapper.Map<MessageResponseDTO>(messageDomain);
         }
 
-        public async Task<IEnumerable<MessageResponseDTO?>?> GetMessageByConversationIdAsync(Guid conversationId)
+        public async Task<IEnumerable<MessageResponseDTO?>?> GetMessageByConversationIdAsync(Guid conversationId, int pageNumber, int pageSize)
         {
-            var messageDomains = await messageRepository.GetByConversationId(conversationId);
+            var messageDomains = await messageRepository.GetByConversationId(conversationId, pageNumber, pageSize);
 
             // Giả sử authorDomains là danh sách các đối tượng AuthorDomain
             var messageResponse = mapper.Map<List<MessageResponseDTO>>(messageDomains);

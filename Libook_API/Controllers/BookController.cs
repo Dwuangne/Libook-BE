@@ -64,9 +64,10 @@ namespace Libook_API.Controllers
             Func<IQueryable<Book>, IOrderedQueryable<Book>> orderByFunc = null; // Default ordering by Name
             if (orderBy?.ToLower() == "price")
             {
-                orderByFunc = IsDescending ? q => q.OrderByDescending(b => b.Price) : q => q.OrderBy(b => b.Price);
+                orderByFunc = IsDescending ? q => q.OrderByDescending(b => b.Price * (100 - b.PrecentDiscount) / 100)
+                                           : q => q.OrderBy(b => b.Price * (100 - b.PrecentDiscount) / 100);
             }
-            if(orderBy?.ToLower() == "name")
+            if (orderBy?.ToLower() == "name")
             {
                 orderByFunc = IsDescending ? q => q.OrderByDescending(b => b.Name) : q => q.OrderBy(b => b.Name);
             }

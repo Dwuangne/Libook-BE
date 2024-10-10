@@ -54,9 +54,12 @@ namespace Libook_API.Controllers
 
         [HttpGet]
         [Route("conversation/{conversationId:Guid}")]
-        public async Task<IActionResult> GetByConversationId([FromRoute] Guid conversationId)
+        public async Task<IActionResult> GetByConversationId(
+            [FromRoute] Guid conversationId,
+            [FromQuery] int pageIndex = 1,
+            [FromQuery] int pageSize = 20)
         {
-            var messageResponse = await messageService.GetMessageByConversationIdAsync(conversationId);
+            var messageResponse = await messageService.GetMessageByConversationIdAsync(conversationId, pageIndex, pageSize);
 
             var response = new ResponseObject
             {
