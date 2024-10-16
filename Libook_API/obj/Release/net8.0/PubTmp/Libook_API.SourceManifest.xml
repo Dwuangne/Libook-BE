@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="D:\Libook\Libook-be\Libook_API\obj\Release\net8.0\PubTmp\Out\" />
+  <dbfullsql path="D:\Libook\Libook-be\Libook_API\obj\Release\net8.0\PubTmp\EFSQLScripts\Libook_API.Data.LibookAuthDbContext.sql" />
+  <dbfullsql path="D:\Libook\Libook-be\Libook_API\obj\Release\net8.0\PubTmp\EFSQLScripts\Libook_API.Data.LibookDbContext.sql" />
+</sitemanifest>
