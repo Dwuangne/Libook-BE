@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="app-libook" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Libook\\Libook-be\\Libook_API\\obj\\Release\\net8\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="Libook_API.Data.LibookAuthDbContext" description="" value="Data Source=sqlserver-libook.database.windows.net,1433;Initial Catalog=sqldb-libook;User ID=libookadmin;Password=Libook2024" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\Libook\\Libook-be\\Libook_API\\obj\\Release\\net8\.0\\PubTmp\\EFSQLScripts\\Libook_API\.Data\.LibookAuthDbContext\.sql$" />
+  </parameter>
+  <parameter name="Libook_API.Data.LibookDbContext" description="" value="Data Source=sqlserver-libook.database.windows.net,1433;Initial Catalog=sqldb-libook;User ID=libookadmin;Password=Libook2024" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^D:\\Libook\\Libook-be\\Libook_API\\obj\\Release\\net8\.0\\PubTmp\\EFSQLScripts\\Libook_API\.Data\.LibookDbContext\.sql$" />
+  </parameter>
+</parameters>

@@ -147,19 +147,6 @@ namespace Libook_API
             // AutoMapper configuration
             builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
 
-            //// Cấu hình Distributed Memory Cache
-            //builder.Services.AddDistributedMemoryCache();
-
-            //// Session configuration
-            //builder.Services.AddSession(options =>
-            //{
-            //    options.IdleTimeout = TimeSpan.FromMinutes(60*24*30); // Thời gian hết hạn session
-            //    options.Cookie.HttpOnly = true;
-            //    options.Cookie.IsEssential = true;
-            //    options.Cookie.SameSite = SameSiteMode.None; // Đảm bảo SameSite=None
-            //    options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Luôn yêu cầu cookie bảo mật
-            //});
-
             // Identity configuration
             builder.Services.AddIdentityCore<IdentityUser>()
                 .AddRoles<IdentityRole>()
@@ -182,8 +169,6 @@ namespace Libook_API
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                //options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                //options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
             })
             .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
             {
@@ -198,43 +183,6 @@ namespace Libook_API
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                 };
             });
-            //.AddGoogle(googleOptions =>
-            //{
-            //    googleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-            //    googleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-            //    googleOptions.CallbackPath = "/api/Auth/signin-google";
-            //    googleOptions.SaveTokens = true;
-            //    googleOptions.Events = new OAuthEvents
-            //    {
-            //        //OnRedirectToAuthorizationEndpoint = context =>
-            //        //{
-            //        ////    Ghi lại giá trị state khi gửi đi
-            //        //    var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
-            //        //    logger.LogDebug("OAuth State: {State}", context.Properties.Items[".xsrf"]);
-            //        //    return Task.CompletedTask;
-            //        //},
-            //        OnRemoteFailure = context =>
-            //        {
-            //            var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
-            //            logger.LogError("OAuth Error: {Failure}", context.Failure);
-            //            return Task.CompletedTask;
-            //        }
-            //    };
-            //})
-            //.AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
-            //{
-            //    options.LoginPath = "/api/Auth/Login-by-Google";
-            //    options.LogoutPath = "/api/Auth/Logout";
-            //    options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
-            //    options.Cookie.SameSite = SameSiteMode.None;
-
-            //    // Tính toán thời gian sống cookie
-            //    DateTime expirationDate = new DateTime(2024, 9, 25, 7, 40, 15, DateTimeKind.Utc);
-            //    TimeSpan expirationSpan = expirationDate - DateTime.UtcNow;
-
-            //    options.ExpireTimeSpan = expirationSpan;
-            //    options.SlidingExpiration = true; // Bật tính năng gia hạn thời gian sống cookie
-            //});
 
             // CORS configuration
             builder.Services.AddCors(options =>
@@ -251,12 +199,6 @@ namespace Libook_API
 
             builder.Services.AddSingleton<ShareDb>();
 
-            // Antiforgery configuration
-            //builder.Services.AddAntiforgery(options =>
-            //{
-            //    options.HeaderName = "Bearer";
-            //});
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -267,12 +209,7 @@ namespace Libook_API
             }
 
             app.UseMiddleware<ExceptionHandlerMiddleware>();
-
-            //app.UseSession();
             app.UseHttpsRedirection();
-            app.UseCors("AllowAll");
-            app.UseAuthentication();
-            app.UseAuthorization();
 
             // Static files setup
             app.UseStaticFiles(new StaticFileOptions
@@ -286,8 +223,15 @@ namespace Libook_API
                 RequestPath = "/Template"
             });
 
+            app.UseCors("AllowAll");
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.MapControllers();
             app.MapHub<ChatHub>("/chathub");
+
+            app.MapGet("/", () => "Welcome to Libook API!");
+
             app.Run();
         }
     }
