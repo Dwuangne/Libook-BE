@@ -1313,6 +1313,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Libook_API.Controllers.CrawlDataController",
+    "Method": "GetArticleFromVnExpress",
+    "RelativePath": "vnexpress",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Libook_API.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

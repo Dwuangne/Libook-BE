@@ -175,3 +175,4 @@ D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.Extensions.DependencyI
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\HtmlAgilityPack.dll

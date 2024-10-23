@@ -3,6 +3,7 @@ using Libook_API.Models.Domain;
 using Libook_API.Models.DTO;
 using Libook_API.Repositories.AuthorRepo;
 using Libook_API.Repositories.CommentRepo;
+using Libook_API.Service.CommentImageService;
 using Microsoft.AspNetCore.Identity;
 using System.Net;
 using System.Security.Claims;
@@ -12,12 +13,14 @@ namespace Libook_API.Service.CommentService
     public class CommentService : ICommentService
     {
         private readonly ICommentRepository commentRepository;
+        private readonly ICommentImageService commentImageService;
         private readonly UserManager<IdentityUser> userManager;
         private readonly IMapper mapper;
 
-        public CommentService(ICommentRepository commentRepository, UserManager<IdentityUser> userManager, IMapper mapper)
+        public CommentService(ICommentRepository commentRepository, ICommentImageService commentImageService, UserManager<IdentityUser> userManager, IMapper mapper)
         {
             this.commentRepository = commentRepository;
+            this.commentImageService = commentImageService;
             this.userManager = userManager;
             this.mapper = mapper;
         }
