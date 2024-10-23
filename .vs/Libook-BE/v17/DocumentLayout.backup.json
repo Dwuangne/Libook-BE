@@ -3,44 +3,104 @@
   "WorkspaceRootPath": "D:\\Libook\\Libook-BE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\service\\crawlservice\\crawldataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\service\\crawlservice\\crawldataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\template\\emailtemplate\\confirmemailtemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\template\\emailtemplate\\confirmemailtemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\crawldatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\crawldatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\articledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\service\\crawlservice\\icrawldataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\service\\crawlservice\\icrawldataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\service\\districtservice\\idistrictservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\service\\districtservice\\idistrictservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\libook_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\libook_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\template\\emailtemplate\\confirmemailsuccesstemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\template\\emailtemplate\\confirmemailsuccesstemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\bookimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\bookimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\template\\emailtemplate\\confirmemailfailuretemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\template\\emailtemplate\\confirmemailfailuretemplate.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\commentimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\commentimagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\template\\paymenttemplate\\paymentfail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\template\\paymenttemplate\\paymentfail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\libook_api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\libook_api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\service\\conversationservice\\conversationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\service\\conversationservice\\conversationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\libook_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\libook_api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\controllers\\conversationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\controllers\\conversationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\template\\paymenttemplate\\paymenterror.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\template\\paymenttemplate\\paymenterror.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\service\\conversationservice\\iconversationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\service\\conversationservice\\iconversationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\bookdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\districtdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\districtdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\conversationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\conversationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\models\\dto\\commentimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\models\\dto\\commentimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\service\\commentimageservice\\commentimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\service\\commentimageservice\\commentimageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|d:\\libook\\libook-be\\libook_api\\service\\commentservice\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC5A1F4E-1D57-41ED-BD99-8EA18816DE47}|Libook_API\\Libook_API.csproj|solutionrelative:libook_api\\service\\commentservice\\commentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -49,152 +109,312 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 652,
-          "SelectedChildIndex": 7,
+          "DockedWidth": 888,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CrawlDataService.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CrawlService\\CrawlDataService.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Service\\CrawlService\\CrawlDataService.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CrawlService\\CrawlDataService.cs*",
+              "RelativeToolTip": "Libook_API\\Service\\CrawlService\\CrawlDataService.cs*",
+              "ViewState": "AgIAABEAAAAAAAAAAADwvxMAAABvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T04:00:01.859Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ConfirmEmailFailureTemplate.html",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\EmailTemplate\\ConfirmEmailFailureTemplate.html",
-              "RelativeDocumentMoniker": "Libook_API\\Template\\EmailTemplate\\ConfirmEmailFailureTemplate.html",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\EmailTemplate\\ConfirmEmailFailureTemplate.html",
-              "RelativeToolTip": "Libook_API\\Template\\EmailTemplate\\ConfirmEmailFailureTemplate.html",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-16T06:28:03.319Z",
-              "EditorCaption": ""
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Repositories\\GenericRepository.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "Libook_API\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAwwEEAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T04:14:59.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IDistrictService.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\DistrictService\\IDistrictService.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Service\\DistrictService\\IDistrictService.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\DistrictService\\IDistrictService.cs",
+              "RelativeToolTip": "Libook_API\\Service\\DistrictService\\IDistrictService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T04:09:21.128Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ConfirmEmailTemplate.html",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\EmailTemplate\\ConfirmEmailTemplate.html",
-              "RelativeDocumentMoniker": "Libook_API\\Template\\EmailTemplate\\ConfirmEmailTemplate.html",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\EmailTemplate\\ConfirmEmailTemplate.html*",
-              "RelativeToolTip": "Libook_API\\Template\\EmailTemplate\\ConfirmEmailTemplate.html*",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAwDAAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-15T15:21:51.926Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ConfirmEmailSuccessTemplate.html",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\EmailTemplate\\ConfirmEmailSuccessTemplate.html",
-              "RelativeDocumentMoniker": "Libook_API\\Template\\EmailTemplate\\ConfirmEmailSuccessTemplate.html",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\EmailTemplate\\ConfirmEmailSuccessTemplate.html",
-              "RelativeToolTip": "Libook_API\\Template\\EmailTemplate\\ConfirmEmailSuccessTemplate.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-15T15:21:49.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Libook_API\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Libook_API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAYwE8AAAAAAAAAAAAAAA==",
+              "Title": "CrawlDataController.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CrawlDataController.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Controllers\\CrawlDataController.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CrawlDataController.cs",
+              "RelativeToolTip": "Libook_API\\Controllers\\CrawlDataController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAADgvxkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T15:20:58.022Z",
+              "WhenOpened": "2024-10-22T08:48:34.674Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\appsettings.json",
-              "RelativeDocumentMoniker": "Libook_API\\appsettings.json",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\appsettings.json",
-              "RelativeToolTip": "Libook_API\\appsettings.json",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-15T15:13:31.867Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PaymentFail.html",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\PaymentTemplate\\PaymentFail.html",
-              "RelativeDocumentMoniker": "Libook_API\\Template\\PaymentTemplate\\PaymentFail.html",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\PaymentTemplate\\PaymentFail.html",
-              "RelativeToolTip": "Libook_API\\Template\\PaymentTemplate\\PaymentFail.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-15T15:13:29.739Z",
-              "EditorCaption": ""
+              "Title": "ICrawlDataService.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CrawlService\\ICrawlDataService.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Service\\CrawlService\\ICrawlDataService.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CrawlService\\ICrawlDataService.cs",
+              "RelativeToolTip": "Libook_API\\Service\\CrawlService\\ICrawlDataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T04:00:10.33Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ArticleDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\ArticleDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\ArticleDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\ArticleDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\ArticleDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T04:09:36.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Controllers\\BookController.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Libook_API\\Controllers\\BookController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAADgvz8AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T07:52:39.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CommentImageController.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CommentImageController.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Controllers\\CommentImageController.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CommentImageController.cs",
+              "RelativeToolTip": "Libook_API\\Controllers\\CommentImageController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T09:18:29.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Program.cs",
               "RelativeDocumentMoniker": "Libook_API\\Program.cs",
               "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Program.cs",
               "RelativeToolTip": "Libook_API\\Program.cs",
-              "ViewState": "AgIAANQAAAAAAAAAAAAlwOoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAAswMoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T15:13:27.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PaymentError.html",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\PaymentTemplate\\PaymentError.html",
-              "RelativeDocumentMoniker": "Libook_API\\Template\\PaymentTemplate\\PaymentError.html",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Template\\PaymentTemplate\\PaymentError.html",
-              "RelativeToolTip": "Libook_API\\Template\\PaymentTemplate\\PaymentError.html",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-10-15T14:43:30.545Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Libook_API.http",
-              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Libook_API.http",
-              "RelativeDocumentMoniker": "Libook_API\\Libook_API.http",
-              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Libook_API.http",
-              "RelativeToolTip": "Libook_API\\Libook_API.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-10-15T11:51:09.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T09:02:44.372Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Libook_API",
+              "Title": "Libook_API.csproj",
               "DocumentMoniker": "D:\\Libook\\Libook-be\\Libook_API\\Libook_API.csproj",
               "RelativeDocumentMoniker": "Libook_API\\Libook_API.csproj",
               "ToolTip": "D:\\Libook\\Libook-be\\Libook_API\\Libook_API.csproj",
               "RelativeToolTip": "Libook_API\\Libook_API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-15T11:39:00.75Z"
+              "WhenOpened": "2024-10-22T09:46:56.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BookImageController.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\BookImageController.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Controllers\\BookImageController.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\BookImageController.cs",
+              "RelativeToolTip": "Libook_API\\Controllers\\BookImageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwB8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:49:16.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CheckOutController.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CheckOutController.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Controllers\\CheckOutController.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CheckOutController.cs",
+              "RelativeToolTip": "Libook_API\\Controllers\\CheckOutController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:52:32.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "Libook_API\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:49:35.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ConversationService.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\ConversationService\\ConversationService.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Service\\ConversationService\\ConversationService.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\ConversationService\\ConversationService.cs",
+              "RelativeToolTip": "Libook_API\\Service\\ConversationService\\ConversationService.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAuwGsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:59:46.025Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ConversationController.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\ConversationController.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Controllers\\ConversationController.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Controllers\\ConversationController.cs",
+              "RelativeToolTip": "Libook_API\\Controllers\\ConversationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:51:57.274Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IConversationService.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\ConversationService\\IConversationService.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Service\\ConversationService\\IConversationService.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\ConversationService\\IConversationService.cs",
+              "RelativeToolTip": "Libook_API\\Service\\ConversationService\\IConversationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T04:06:34.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BookDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\BookDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\BookDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\BookDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\BookDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T08:56:49.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CategoryDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CategoryDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\CategoryDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CategoryDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\CategoryDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T04:16:24.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DistrictDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\DistrictDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\DistrictDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\DistrictDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\DistrictDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T02:49:38.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CommentDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CommentDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\CommentDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CommentDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\CommentDTO.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAYwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T02:39:14.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CustomerDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CustomerDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\CustomerDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CustomerDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\CustomerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T02:49:37.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ConversationDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\ConversationDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\ConversationDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\ConversationDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\ConversationDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T02:49:35.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CommentImageDTO.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CommentImageDTO.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Models\\DTO\\CommentImageDTO.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Models\\DTO\\CommentImageDTO.cs",
+              "RelativeToolTip": "Libook_API\\Models\\DTO\\CommentImageDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T02:39:55.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CommentImageService.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CommentImageService\\CommentImageService.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Service\\CommentImageService\\CommentImageService.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CommentImageService\\CommentImageService.cs",
+              "RelativeToolTip": "Libook_API\\Service\\CommentImageService\\CommentImageService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T02:36:19.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CommentService.cs",
+              "DocumentMoniker": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CommentService\\CommentService.cs",
+              "RelativeDocumentMoniker": "Libook_API\\Service\\CommentService\\CommentService.cs",
+              "ToolTip": "D:\\Libook\\Libook-BE\\Libook_API\\Service\\CommentService\\CommentService.cs",
+              "RelativeToolTip": "Libook_API\\Service\\CommentService\\CommentService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAQwCEAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T02:27:50.587Z"
             }
           ]
         }

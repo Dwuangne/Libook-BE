@@ -4,6 +4,7 @@ using Libook_API.Models.DTO;
 using Libook_API.Repositories.AuthorRepo;
 using Libook_API.Repositories.BookRepo;
 using Libook_API.Repositories.VoucherRepo;
+using Libook_API.Service.BookImageService;
 using System.Linq.Expressions;
 
 namespace Libook_API.Service.BookService
@@ -11,11 +12,13 @@ namespace Libook_API.Service.BookService
     public class BookService : IBookService
     {
         private readonly IBookRepository bookRepository;
+        private readonly IBookImageService bookImageService;
         private readonly IMapper mapper;
 
-        public BookService(IBookRepository bookRepository, IMapper mapper)
+        public BookService(IBookRepository bookRepository, IBookImageService bookImageService, IMapper mapper)
         {
             this.bookRepository = bookRepository;
+            this.bookImageService = bookImageService;
             this.mapper = mapper;
         }
         public async Task<BookResponseDTO> AddBookAsync(BookDTO bookDTO)
@@ -66,6 +69,7 @@ namespace Libook_API.Service.BookService
         public async Task<BookResponseDTO?> UpdateBookAsync(Guid bookId, BookUpdateDTO bookUpdateDTO)
         {
             var existingBook = await bookRepository.GetByIdAsync(bookId);
+            var bookImageResponse = await bookImageService.GetBookImageByBookIdAsync(bookId);
             if (existingBook == null)
             {
                 return null;
@@ -79,6 +83,7 @@ namespace Libook_API.Service.BookService
             existingBook.AuthorId = bookUpdateDTO.AuthorId;
             existingBook.CategoryId = bookUpdateDTO.CategoryId;
             existingBook.SupplierId = bookUpdateDTO.SupplierId;
+            existingBook.ImageUrl = bookImageResponse.First().BookImageUrl;
 
             existingBook = await bookRepository.UpdateAsync(existingBook);
 

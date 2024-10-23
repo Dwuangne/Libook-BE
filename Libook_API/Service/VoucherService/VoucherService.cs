@@ -35,8 +35,9 @@ namespace Libook_API.Service.VoucherService
         public async Task<IEnumerable<VoucherResponseDTO?>> GetAllVoucherAsync()
         {
             var voucherDomains = await voucherRepository.GetAllAsync();
+            voucherDomains = voucherDomains.OrderByDescending(voucher => voucher.EndDate).ToList();
 
-            // Giả sử authorDomains là danh sách các đối tượng AuthorDomain
+            // Ánh xạ voucherDomains sang danh sách VoucherResponseDTO
             var voucherResponse = mapper.Map<List<VoucherResponseDTO>>(voucherDomains);
 
             return voucherResponse;

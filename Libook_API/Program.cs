@@ -60,6 +60,7 @@ using System.Security.Claims;
 using System.Text;
 using Scrutor;
 using Microsoft.AspNetCore.Antiforgery;
+using Libook_API.Service.CrawlDataService;
 
 namespace Libook_API
 {
@@ -131,6 +132,8 @@ namespace Libook_API
                 );
             });
 
+            builder.Services.AddHttpClient<ICrawlDataService, CrawlDataService>();
+
             // Register Services and Repositories
             builder.Services.Scan(scan => scan
                 .FromAssemblyOf<ITokenService>()
@@ -196,8 +199,6 @@ namespace Libook_API
 
                 });
             });
-
-            builder.Services.AddSingleton<ShareDb>();
 
             var app = builder.Build();
 
