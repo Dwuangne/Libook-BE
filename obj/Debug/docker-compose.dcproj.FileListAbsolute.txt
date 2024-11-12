@@ -53,3 +53,11 @@ D:\Libook\Libook-be\bin\Debug\Google.Apis.dll
 D:\Libook\Libook-be\bin\Debug\System.CodeDom.dll
 D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.DependencyModel.dll
+D:\Libook\Libook-be\bin\Debug\HtmlAgilityPack.dll
+D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+D:\Libook\Libook-be\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+D:\Libook\Libook-be\bin\Debug\OpenAI.dll
+D:\Libook\Libook-be\bin\Debug\System.ClientModel.dll
+D:\Libook\Libook-be\bin\Debug\System.Memory.Data.dll

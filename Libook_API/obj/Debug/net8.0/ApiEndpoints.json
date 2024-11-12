@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Libook_API.Program\u002B\u003C\u003Ec",
-    "Method": "\u003CMain\u003Eb__0_10",
+    "Method": "\u003CMain\u003Eb__0_11",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -681,6 +681,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Libook_API.Controllers.CrawlDataController",
+    "Method": "GetArticleFromVnExpress",
+    "RelativePath": "api/CrawlData/vnexpress",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Libook_API.Controllers.DistrictController",
     "Method": "GetById",
     "RelativePath": "api/District/{id}",
@@ -797,6 +807,22 @@
         "Name": "pageSize",
         "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Libook_API.Controllers.OpenAIController",
+    "Method": "SugguestBookFromBookId",
+    "RelativePath": "api/OpenAI/book/{bookId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Guid",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -1310,16 +1336,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Libook_API.Controllers.CrawlDataController",
-    "Method": "GetArticleFromVnExpress",
-    "RelativePath": "vnexpress",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

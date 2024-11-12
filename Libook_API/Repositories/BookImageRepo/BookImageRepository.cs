@@ -14,5 +14,10 @@ namespace Libook_API.Repositories.BookImageRepo
         {
             return await _dbSet.Where(bookImage => bookImage.BookId == bookId).ToListAsync();
         }
+
+        public async Task<IEnumerable<BookImage>> GetByBookImageUrl(Guid bookId, string bookImageUrl)
+        {
+            return await _dbSet.Where(bookImage => bookImage.BookImageUrl == bookImageUrl && bookImage.BookId == bookId).ToListAsync();
+        }
     }
 }

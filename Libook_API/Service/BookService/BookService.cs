@@ -25,7 +25,7 @@ namespace Libook_API.Service.BookService
         {
             // Map or Convert DTO to Domain Model
             var bookDomain = mapper.Map<Book>(bookDTO);
-            
+
             bookDomain.ImageUrl = bookDomain.BookImages.First().BookImageUrl;
             foreach (var bookImage in bookDomain.BookImages)
             {
@@ -38,26 +38,35 @@ namespace Libook_API.Service.BookService
             return mapper.Map<BookResponseDTO>(bookDomain);
         }
 
-        public async Task<IEnumerable<BookResponseDTO?>> GetBookAsync(
-            Expression<Func<Book, bool>>? filter, 
-            Func<IQueryable<Book>, IOrderedQueryable<Book>> orderBy, 
-            string includeProperties, 
-            int pageIndex, 
+        public async Task<BookListDTO?> GetBookAsync(
+            Expression<Func<Book, bool>>? filter,
+            Func<IQueryable<Book>, IOrderedQueryable<Book>> orderBy,
+            string includeProperties,
+            int pageIndex,
             int pageSize
             )
         {
-            var bookDomains = await bookRepository.GetAsync(
+            var response = await bookRepository.GetAsync(
                         filter: filter,
                         orderBy: orderBy,
                         includeProperties: includeProperties,
                         pageIndex: pageIndex,
                         pageSize: pageSize
                         );
+            var bookDomains = response.Item1;
+            var totalPage = response.Item2;
 
             // Giả sử authorDomains là danh sách các đối tượng AuthorDomain
             var bookResponse = mapper.Map<List<BookResponseDTO>>(bookDomains);
 
-            return bookResponse;
+            var bookListResponse = new BookListDTO
+            {
+                TotalPage = totalPage,
+                PageIndex = pageIndex,
+                BookResponseDTOs = bookResponse
+            };
+
+            return bookListResponse;
         }
 
         public async Task<BookResponseDTO?> GetBookByIdAsync(Guid bookId)
@@ -83,7 +92,12 @@ namespace Libook_API.Service.BookService
             existingBook.AuthorId = bookUpdateDTO.AuthorId;
             existingBook.CategoryId = bookUpdateDTO.CategoryId;
             existingBook.SupplierId = bookUpdateDTO.SupplierId;
-            existingBook.ImageUrl = bookImageResponse.First().BookImageUrl;
+
+            var bookImageDomain = await bookImageService.GetBookImageByBookImageUrlAsync(existingBook.Id, existingBook.ImageUrl);
+            if (!bookImageDomain.Any())
+            {
+                existingBook.ImageUrl = bookImageResponse.First().BookImageUrl;
+            }
 
             existingBook = await bookRepository.UpdateAsync(existingBook);
 

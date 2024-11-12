@@ -175,3 +175,11 @@ D:\Libook\Libook-be\Libook_API\obj\Release\net8.0\refint\Libook_API.dll
 D:\Libook\Libook-be\Libook_API\obj\Release\net8.0\Libook_API.pdb
 D:\Libook\Libook-be\Libook_API\obj\Release\net8.0\Libook_API.genruntimeconfig.cache
 D:\Libook\Libook-be\Libook_API\obj\Release\net8.0\ref\Libook_API.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\HtmlAgilityPack.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\Azure.AI.OpenAI.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\Microsoft.Extensions.Logging.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\OpenAI.dll
+D:\Libook\Libook-be\Libook_API\bin\Release\net8.0\System.ClientModel.dll

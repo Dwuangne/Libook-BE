@@ -6,7 +6,7 @@ namespace Libook_API.Service.BookService
 {
     public interface IBookService
     {
-        Task<IEnumerable<BookResponseDTO?>> GetBookAsync(
+        Task<BookListDTO?> GetBookAsync(
             Expression<Func<Book, bool>>? filter, 
             Func<IQueryable<Book>, IOrderedQueryable<Book>> orderBy, 
             string includeProperties, 

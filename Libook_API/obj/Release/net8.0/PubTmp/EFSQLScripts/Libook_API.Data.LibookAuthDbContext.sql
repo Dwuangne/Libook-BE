@@ -215,7 +215,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240824135733_Create Auth Database', N'8.0.8');
+    VALUES (N'20240824135733_Create Auth Database', N'8.0.10');
 END;
 GO
 

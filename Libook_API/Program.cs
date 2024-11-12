@@ -61,11 +61,18 @@ using System.Text;
 using Scrutor;
 using Microsoft.AspNetCore.Antiforgery;
 using Libook_API.Service.CrawlDataService;
+using Azure;
+using OpenAI;
+using System.ClientModel;
+using Microsoft.Extensions.DependencyInjection;
+using Libook_API.Service.OpenAIService;
+using Azure.AI.OpenAI;
+using Azure.Identity;
 
 namespace Libook_API
 {
     public class Program
-{
+    {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -97,22 +104,22 @@ namespace Libook_API
                     Scheme = JwtBearerDefaults.AuthenticationScheme
                 });
                 options.AddSecurityRequirement(new OpenApiSecurityRequirement
-        {
-            {
-                new OpenApiSecurityScheme
                 {
-                    Reference = new OpenApiReference
                     {
-                        Type = ReferenceType.SecurityScheme,
-                        Id = JwtBearerDefaults.AuthenticationScheme
-                    },
-                    Scheme = "Oauth2",
-                    Name = JwtBearerDefaults.AuthenticationScheme,
-                    In = ParameterLocation.Header
-                },
-                new List<string>()
-            }
-        });
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = JwtBearerDefaults.AuthenticationScheme
+                            },
+                            Scheme = "Oauth2",
+                            Name = JwtBearerDefaults.AuthenticationScheme,
+                            In = ParameterLocation.Header
+                        },
+                        new List<string>()
+                    }
+                });
             });
 
             // Configure DBContexts
@@ -120,7 +127,14 @@ namespace Libook_API
                 options.UseSqlServer(builder.Configuration.GetConnectionString("LibookConnectionString")));
             builder.Services.AddDbContext<LibookAuthDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("LibookAuthConnectionString")));
+            //Register OpenAI service
+            builder.Services.AddSingleton<AzureOpenAIClient>(_ =>
+            {
+                var apiKey = builder.Configuration["AzureOpenAI:Key"];
+                var endpoint = builder.Configuration["AzureOpenAI:Endpoint"];
 
+                return new AzureOpenAIClient(new Uri(endpoint), new ApiKeyCredential(apiKey));
+            });
             // Register PayOS service
             builder.Services.AddScoped<PayOS>(provider =>
             {
@@ -134,6 +148,7 @@ namespace Libook_API
 
             builder.Services.AddHttpClient<ICrawlDataService, CrawlDataService>();
 
+            builder.Services.AddScoped<IAzureOpenAIService,  AzureOpenAIService>();
             // Register Services and Repositories
             builder.Services.Scan(scan => scan
                 .FromAssemblyOf<ITokenService>()
