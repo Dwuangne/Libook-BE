@@ -10,7 +10,7 @@ namespace Libook_API.Repositories
         Task<TEntity> UpdateAsync(TEntity entity);
         Task<TEntity> DeleteAsync(object id);
         Task<TEntity> Delete(TEntity entity);
-        Task<IEnumerable<TEntity>> GetAsync(
+        Task<(IEnumerable<TEntity>, int TotalPages)> GetAsync(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "",

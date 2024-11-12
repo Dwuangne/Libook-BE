@@ -6,6 +6,8 @@ namespace Libook_API.Service.BookImageService
     {
         Task<IEnumerable<BookImageResponseDTO?>> GetAllBookImageAsync();
         Task<BookImageResponseDTO?> GetBookImageByIdAsync(Guid bookImageId);
+
+        Task<IEnumerable<BookImageResponseDTO?>> GetBookImageByBookImageUrlAsync(Guid bookId, String bookImageurl);
         Task<IEnumerable<BookImageResponseDTO>?> GetBookImageByBookIdAsync(Guid bookId);
         Task<BookImageResponseDTO> AddBookImageAsync(BookImageDTO bookImageDTO);
         Task<BookImageResponseDTO?> UpdateBookImageAsync(Guid bookImageId, BookImageUpdateDTO bookImageUpdateDTO);

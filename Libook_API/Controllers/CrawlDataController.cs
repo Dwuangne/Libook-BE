@@ -18,7 +18,7 @@ namespace Libook_API.Controllers
         }
 
         [HttpGet]
-        [Route("/vnexpress")]
+        [Route("vnexpress")]
         public async Task<IActionResult> GetArticleFromVnExpress()
         {
             var url = "https://vnexpress.net/giai-tri/sach/diem-sach";

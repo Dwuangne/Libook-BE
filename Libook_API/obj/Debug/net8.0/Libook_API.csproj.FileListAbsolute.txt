@@ -176,3 +176,10 @@ D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.AspNetCore.Connections
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
 D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\HtmlAgilityPack.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Azure.AI.OpenAI.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\OpenAI.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\System.ClientModel.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+D:\Libook\Libook-be\Libook_API\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll

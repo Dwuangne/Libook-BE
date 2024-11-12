@@ -59,6 +59,13 @@ namespace Libook_API.Service.BookImageService
             return bookResponse;
         }
 
+        public async Task<IEnumerable<BookImageResponseDTO?>> GetBookImageByBookImageUrlAsync(Guid bookId, string bookImageurl)
+        {
+            var bookImageDomain =  await bookImageRepository.GetByBookImageUrl(bookId, bookImageurl);
+            var bookResponse = mapper.Map<List<BookImageResponseDTO>>(bookImageDomain);
+            return bookResponse;
+        }
+
         public async Task<BookImageResponseDTO?> GetBookImageByIdAsync(Guid bookImageId)
         {
             var bookImageDomain = await bookImageRepository.GetByIdAsync(bookImageId);

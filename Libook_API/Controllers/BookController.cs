@@ -39,7 +39,7 @@ namespace Libook_API.Controllers
             // Combine filters using AndAlso method
             if (!string.IsNullOrEmpty(filter))
             {
-                filterExpression = filterExpression.AndAlso(b => b.Name.Contains(filter));
+                filterExpression = filterExpression.AndAlso(b => b.Name.ToLower().Contains(filter.ToLower()));
             }
 
             if (!string.IsNullOrEmpty(authorId))

@@ -61,7 +61,7 @@ namespace Libook_API.Repositories
             return entity;
         }
 
-        public virtual async Task<IEnumerable<TEntity>> GetAsync(
+        public virtual async Task<(IEnumerable<TEntity>, int TotalPages)> GetAsync(
             Expression<Func<TEntity, bool>> filter = null,
             Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
             string includeProperties = "",
@@ -85,16 +85,20 @@ namespace Libook_API.Repositories
                 query = orderBy(query);
             }
 
+            int totalRecords = await query.CountAsync();
+
             // Implementing pagination
             if (pageIndex.HasValue && pageSize.HasValue)
             {
                 int validPageIndex = pageIndex.Value > 0 ? pageIndex.Value - 1 : 0;
-                int validPageSize = pageSize.Value > 0 ? pageSize.Value : 10;
+                int validPageSize = pageSize.Value > 0 ? pageSize.Value : 12;
 
                 query = query.Skip(validPageIndex * validPageSize).Take(validPageSize);
             }
 
-            return await query.ToListAsync();
+            int totalPages = (int)Math.Ceiling((double)totalRecords / (pageSize ?? 12));
+
+            return (await query.ToListAsync(), totalPages);
         }
     }
 }

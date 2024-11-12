@@ -364,7 +364,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240829134619_Create Libook DB', N'8.0.8');
+    VALUES (N'20240829134619_Create Libook DB', N'8.0.10');
 END;
 GO
 
@@ -456,7 +456,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240830025433_Add OrderInfo table', N'8.0.8');
+    VALUES (N'20240830025433_Add OrderInfo table', N'8.0.10');
 END;
 GO
 
@@ -598,7 +598,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240830030927_Add OrderInfo table2', N'8.0.8');
+    VALUES (N'20240830030927_Add OrderInfo table2', N'8.0.10');
 END;
 GO
 
@@ -623,7 +623,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240830051929_Update Order', N'8.0.8');
+    VALUES (N'20240830051929_Update Order', N'8.0.10');
 END;
 GO
 
@@ -685,7 +685,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240904054102_Update Book table', N'8.0.8');
+    VALUES (N'20240904054102_Update Book table', N'8.0.10');
 END;
 GO
 
@@ -710,7 +710,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240905015451_Update order table', N'8.0.8');
+    VALUES (N'20240905015451_Update order table', N'8.0.10');
 END;
 GO
 
@@ -741,7 +741,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240906133815_Update string numberphone', N'8.0.8');
+    VALUES (N'20240906133815_Update string numberphone', N'8.0.10');
 END;
 GO
 
@@ -782,7 +782,7 @@ IF NOT EXISTS (
 )
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20240913084304_CreatePaymentOrder', N'8.0.8');
+    VALUES (N'20240913084304_CreatePaymentOrder', N'8.0.10');
 END;
 GO
 
